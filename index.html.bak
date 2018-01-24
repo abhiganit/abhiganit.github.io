@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <!-- Website template by Abhishek Pandey-->
     <title>Abhishek Pandey</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
     <div id="header">
@@ -18,8 +19,7 @@
             <li class="current"> <a href="index.html">Home</a> </li>
             <li> <a href="research.html">Research</a> </li>
             <li> <a href="contact.html">Contact</a> </li>
-            <li> <a href="https://bytebucket.org/abhiganit/abhiganit.bitbucket.org/raw/5b826773358b0109e0273b657f88f012cba2c893/Abhishek_CV.pdf?token=3120411102b845d7926dcf6cbd1d5435b399f286">Vita</a>
-            </li>
+            <li> <a href="Abhishek_CV.pdf">Vita</a> </li>
           </ul>
         </div>
       </div>
@@ -27,18 +27,30 @@
     <div id="body">
       <div>
         <div>
-          <h2>About Me<br>
+          <h2>HoME<br>
           </h2>
           <img style="width: 755px; height: 360px;" src="images/IMG_0751.JPG" alt="Smiley face"><br>
           <br>
           <div>
             <p><br>
             </p>
+            <p><br>
+            </p>
+            <p><span>Associate Research Scientist, Yale University</span> </p>
+            <p> Center for Infectious Disease Modeling and Analysis,<br>
+            </p>
+            Yale School of Public Health, <br>
+            <p><br>
+            </p>
+            <span></span>
+            <p> </p>
+            <p><span><br>
+              </span></p>
             <p><span>Postdoctoral Associate, Yale University</span> </p>
             <p> Center for Infectious Disease Modeling and Analysis,<br>
             </p>
             Yale School of Public Health, <br>
-            <p>P.I. : Dr. Alison Galvani </p>
+            <p>Mentor : Dr. Alison Galvani </p>
             <p><span><br>
               </span></p>
             <p><span><br>

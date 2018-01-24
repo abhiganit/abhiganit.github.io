@@ -19,7 +19,7 @@
             <li><a href="index.html"> </a><a href="index.html">Home</a> </li>
             <li class="current"> <a href="research.html">Research</a> </li>
             <li> <a href="contact.html">Contact</a> </li>
-            <li> <a target="_blank" href="Abhishek_CV.pdf">Vita</a> </li>
+            <li> <a href="Abhishek_CV.pdf">Vita</a> </li>
           </ul>
         </div>
       </div>
@@ -60,15 +60,7 @@ vector-host
                   spikes in prevalence</a>. </p>
               <h3><span style="font-style: italic;">Selected Talks</span><br>
               </h3>
-              <p> <a target="_blank" href="http://www.youtube.com/watch?v=HkyYD24dYLs">Transient
-                  Spikes after Vaccine Introduction</a>. Math Club, Clemson
-                University (Oct
-                2013)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a target="_blank" href="https://client.blueskybroadcast.com/SIAM14/AN/SIAM_AN14_MS106_2/launch_html5.asp?vAD=MTAxMTk3&amp;vUS=LTk5&amp;vMP=MA==&amp;vHT=bGl2ZS5ibHVlc2t5YnJvYWRjYXN0LmNvbS8=&amp;vPing=VHJ1ZQ==&amp;vPICQ=RmFsc2U=&amp;V=185217062124069133047244070163176094140092189037186017001153063199011116211094091199255033079066">Comparing
-                  vector-host and SIR models for dengue transmission in Thailand
-                  and Variability in the estimates of R0 among studies</a>. SIAM
-                Annual Meeting, Chicago (July 2014)<br>
-              </p>
+              <br>
               <br>
             </div>
           </div>
