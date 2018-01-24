@@ -1,0 +1,76 @@
+#+OPTIONS: num:nil toc:nil
+#+PROPERTY:  padline no
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="worg-classic.css" />
+
+#+TITLE: Abhishek Pandey
+
+* Research
++ [[http://www.ntdmodelling.org/diseases/human-african-trypanosomiasis-sleeping-sickness][NTD modelling symposium]]
++ [[http://ocw.jhsph.edu/index.cfm/go/viewCourse/course/UnderstandingCostEffectiveness/coursePage/index/][Cost-Effective Analysis Course ]]
++ [[http://www.mathworks.com/help/stats/kstest2.html?refresh%3Dtrue][Kolmogorov-Smirnov Test ]]
++ [[http://gradworks.umi.com/36/23/3623902.html][Link to my PhD thesis]]
++ [[http://wonder.cdc.gov/][CDC resource for search]]
++ [[http://www.tsetse.org/][Resource regarding tsetse fly]]
+
+
+* Programming
++ [[http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/readings/][MIT Python Course]]
++ [[http://www.codecademy.com/tracks/python][Python page on Codeacademy]]
++ [[http://blogs.mathworks.com/pick/2012/12/21/figure-margins-subplot-spacings-and-more/][Fixing figure margins, subplot spacing etc in Matlab]]
++ [[http://pcottle.github.io/learnGitBranching/][Learn Git Branching]]
++ [[http://alstatr.blogspot.com/2015/02/python-getting-started-with-data.html][Analyzing data with Python (pandas)]]
++ [[https://github.com/burnash/gspread/blob/master/README.md][From python to google sheets and back]]
++ [[https://github.com/jennybc/gspreadr][From R to google sheets and back]]
+
+
+* Helpful/Cool
++ [[http://ananthakumaran.in/monky/][Monky (for mercurial) manual]]
++ [[https://github.com/fniessen/org-html-themes][HTML theme for org-mode ]]
++ [[http://effbot.org/tkinterbook/][Introduction to Tkinter (for webapps)]]
++ [[http://www.bangmoney.org/presentations/screen.html][Manual for Screen (terminal multiplexer)]]
++ [[http://www.perceptualedge.com/articles/visual_business_intelligence/rules_for_using_color.pdf][Practical rules for using colors in charts]]
++ [[http://colorbrewer2.org/][Color Brewer to visually choose colors for plot ]]
++ [[http://uweziegenhagen.de/?p%3D3100][Reading csv file into Latex]]
++ [[http://tex.stackexchange.com/questions/145223/how-to-draw-a-coffee-cup][Drawing coffee cup using Tikz]]
++ [[http://web.yale.edu/support/intro/guide/index.aspx][Understanding Yale website ]]
++ [[http://bluesimplex.com/109][Really cool beamer template]]
++ [[http://cameron.bracken.bz/beamer-template][Nice beamer template]]
++ [[http://alfaromurillo.bitbucket.org/dotemacs.html][Jorge's dotemacs file]]
++ [[https://weavr.co.uk/][Weavr for google drive integration with latex files ]]
+
+
+
+* Nice Resources
++ [[http://www.ncert.nic.in/ncerts/textbook/textbook.htm?iebe1%3D1-11][NCERT books online]]
++ [[http://www.deccanchronicle.com/140908/lifestyle-health-and-wellbeing/article/experts-warn-about-temporary-spikes-caused-dengue][Project Gutenberg for old classics (Books)]]
++ [[http://math.stackexchange.com/questions][Stackexchange Mathematics ]]
++ [[http://permittestpractice.com/dmv-practice-permit-test/][DMV permit practice test]]
++ [[http://blog.ted.com/8-math-talks-to-blow-your-mind/][8 math TED talks]]
+
+
+
+* Comics/Manga/Animation
++ [[http://www.toonnetworkindia.co.in/][Cartoons in Hindi]]
++ [[http://www.flyyoufools.com/][Fly you fool (starical)]]
++ [[http://www.orangeradius.com/comic/garuda0/][Garuda (Indian Webcomics)]]
++ [[http://www.kinnaricomic.com/][Kinnari comic (nice)]]
++ [[http://www.brainstuck.com/][Brainstuck ]]
+
+
+
+
+
+* Media coverage of research
++ [[http://yaledailynews.com/blog/2014/11/11/multi-pronged-intervention-most-effective-in-stemming-ebola/][Yale News (Ebola)]]
++ [[http://www.latimes.com/science/sciencenow/la-sci-ebola-transmission-funerals-20141030-story.html][Los Angles News (Ebola)]]
++ [[http://www.itv.com/news/update/2014-10-30/safe-burials-for-ebola-victims-will-help-curb-virus/][ITV news (Ebola)]]
++ [[http://zeenews.india.com/news/health/health-news/changes-in-super-spreader-funeral-events-may-help-stop-ebola-spread_1492032.html][ZeeTV news (Ebola)]]
++ [[http://www.sciencedaily.com/releases/2014/10/141030142210.htm][Science Daily (Ebola)]]
++ [[http://www.reuters.com/article/2014/10/30/us-health-ebola-burials-idUSKBN0IJ29P20141030][Reuters (Ebola)]]
++ [[http://www.reddit.com/r/science/comments/2lesat/to_date_the_ebola_epidemic_in_west_africa_has/][Reddit discussion on Ebola paper]]
++ [[http://www.sciencemediacentre.org/expert-reaction-to-modelling-paper-looking-at-interventions-needed-to-contain-ebola-in-west-africa/][Experts opnion on Ebola paper]]
++ [[http://www.sciencemag.org/content/346/6212/twis.full#compilation-3-5-article-title-1][Coverage on This Week in Science]]
++ [[http://www.sciencedaily.com/releases/2014/09/140905090853.htm][Science Daily (Dengue)]]
++ [[http://radiomd.com/show/the-healthy-skeptic/item/23839-vaccines-for-tropical-diseases-may-cause-more-harm-than-good][Jan's radio interview on The Healthy Skeptic (Dengue)]]
++ [[http://www.deccanchronicle.com/140908/lifestyle-health-and-wellbeing/article/experts-warn-about-temporary-spikes-caused-dengue][Deccan Chronicle (Dengue)]
+]

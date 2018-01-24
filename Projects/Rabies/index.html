@@ -1,0 +1,1480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Rabies</title>
+<!-- 2015-10-27 Tue 15:33 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Abhishek Pandey" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Rabies</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction</a>
+<ul>
+<li><a href="#sec-1-1">1.1. Rabies papers from CIDMA and PHFI</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Model</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Model Diagram</a></li>
+<li><a href="#sec-2-2">2.2. Model Equations</a>
+<ul>
+<li><a href="#sec-2-2-1">Parameters used in model fitting:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Delhi Meeting</a>
+<ul>
+<li><a href="#sec-3-1">3.1. Present and Explain model to Abbas and Hiral</a></li>
+<li><a href="#sec-3-2">3.2. Metric</a></li>
+<li><a href="#sec-3-3">3.3. Interventions</a></li>
+<li><a href="#sec-3-4">3.4. Go over cost data with Abbas and Hiral</a></li>
+<li><a href="#sec-3-5">3.5. Vaccine Efficacy</a></li>
+<li><a href="#sec-3-6">3.6. Day 1</a></li>
+<li><a href="#sec-3-7">3.7. Day 2</a>
+<ul>
+<li><a href="#sec-3-7-1">Papers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Notes</a></li>
+<li><a href="#sec-5">5. Things to do</a>
+<ul>
+<li><a href="#sec-5-1">5.1. <span class="done DONE">DONE</span> Provide Exposure Humans (Low, Medium, High).</a></li>
+<li><a href="#sec-5-2">5.2. <span class="todo TODO">TODO</span> Provide results divided as urban and rural settings.</a></li>
+<li><a href="#sec-5-3">5.3. <span class="done DONE">DONE</span> Remove livestock columns</a></li>
+<li><a href="#sec-5-4">5.4. <span class="todo TODO">TODO</span> Predictions with ABC</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. Stakeholder's Meeting</a></li>
+<li><a href="#sec-7">7. My slides</a></li>
+<li><a href="#sec-8">8. Delhi Meeting</a></li>
+<li><a href="#sec-9">9. Paper</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Rabies papers from CIDMA and PHFI</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="https://paperpile.com/shared/XxALaW">Potential for Rabies control through dog vaccination in wildlife-abundant communities of Tanzania</a></td>
+<td class="left">Fitzpatrick et al. 2012</td>
+<td class="left">PLoS Negl. Trop. Dis.</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://paperpile.com/shared/3VBQ64">Cost-effectiveness of canine vaccination to prevent human rabies in rural Tanzania</a></td>
+<td class="left">Fitzpatrick et al. 2014</td>
+<td class="left">Ann. Intern. Med.</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://paperpile.com/shared/wwbLxZ">Rabies control initiative in Tamil Nadu, India: a test case for 'One Health' approach</a></td>
+<td class="left">Abbas et al. 2011</td>
+<td class="left">Intl. Health</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://paperpile.com/shared/RsoMqG">Moving from rabies research to rabies control:lessons from India</a></td>
+<td class="left">Kakkar et al. 2012</td>
+<td class="left">PLoS Negl. Trop. Dis.</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://paperpile.com/shared/wedOJC">Research &amp; policy disconnect: The case of rabies research in India</a></td>
+<td class="left">Abbas and Kakkar 2013</td>
+<td class="left">Indian J. Med. res.</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://paperpile.com/shared/CQLZJz">Cost analysis of a population level rabies control programme in Tamil Nadu, India</a></td>
+<td class="left">Abbas et al. 2014</td>
+<td class="left">PLoS Negl. Trop. Dis.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Model</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Model Diagram</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<div id="fig:ModelDiagram" class="figure">
+<p><img src="RabiesModel.png" alt="RabiesModel.png" height="300px" width="720px" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Model Equations</h3>
+<div class="outline-text-3" id="text-2-2">
+\begin{equation}
+\label{rabies_eqns}
+\begin{split}
+\frac{d S_D}{dt} & = b_D(S_D+E_D+V_D) -\mu_D S_D - \gamma_D S_D N_D -\beta_{DD} I_D S_D -t_W \beta_{DW} I_W S_D - t_V (v_D N_D-V_D) \\
+\frac{d E_D}{dt} &  = \beta_{DD} I_D S_D + t_W \beta_{DW} I_W S_D -\mu_D E_D-\gamma_D E_D N_D-\sigma_D E_D \\
+\frac{d I_D}{dt} & = \sigma_D E_D - \mu_D I_D - \gamma_D I_D N_D - \alpha_D I_D \\
+\frac{d V_D}{dt} & = t_V (v_D N_D- V_D) - \mu_D V_D - \gamma_D V_D N_D \\
+\frac{d S_W}{dt} & = [(b_W-\mu_W)S_W - \gamma_W S_W N_W -\beta_{WW} I_W S_W - \beta_{WD} I_D S_W]t_W \\
+\frac{d E_W}{dt} & = [\beta_{WW} I_W S_W + \beta_{WD} I_D S_W -\mu_W E_W - \gamma_W E_W N_W-\sigma_W E_W]t_W \\
+\frac{d I_W}{dt} & = [\sigma_W E_W - \mu_W I_W -\gamma_W I_W N_W - \alpha_W I_W]t_W
+\end{split}
+\end{equation}
+</div>
+
+
+
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Parameters used in model fitting:</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Parameters</th>
+<th scope="col" class="left">Definitions</th>
+<th scope="col" class="left">Values</th>
+<th scope="col" class="left">Derivation</th>
+<th scope="col" class="left">Ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">b<sub>D</sub></td>
+<td class="left">Dog's birthrate</td>
+<td class="left">0.0015</td>
+<td class="left">.475 pregnancies*5 pups per litter(median)*366969 female dogs/1547238 dogs*(1/365 days)</td>
+<td class="left">Totton 2010</td>
+</tr>
+
+<tr>
+<td class="left">&mu;<sub>D</sub></td>
+<td class="left">Dog's frequency dependent death rate</td>
+<td class="left">b<sub>D</sub>/1.1</td>
+<td class="left">1/lifespan of 1.9 years at birth/365&#x2013;boosted a bit based on non-normal distribution</td>
+<td class="left">Reece 2008</td>
+</tr>
+
+<tr>
+<td class="left">&beta;<sub>DD</sub></td>
+<td class="left">Dog to Dog transmission rate</td>
+<td class="left">-</td>
+<td class="left">We are fitting this now in form of R<sub>0</sub></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&gamma;<sub>D</sub></td>
+<td class="left">Dog's density dependent death rate</td>
+<td class="left">\((b_D-mu_D)/K\)</td>
+<td class="left">-</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&sigma;<sub>D</sub></td>
+<td class="left">Incubation rate in dogs</td>
+<td class="left">0.045</td>
+<td class="left">1/incubation period</td>
+<td class="left">Hampson 2009</td>
+</tr>
+
+<tr>
+<td class="left">&alpha;<sub>D</sub></td>
+<td class="left">Rabies induced death rate in dogs</td>
+<td class="left">0.32</td>
+<td class="left">-</td>
+<td class="left">Hampson 2009</td>
+</tr>
+
+<tr>
+<td class="left">v<sub>D</sub></td>
+<td class="left">Vaccination rate in dogs</td>
+<td class="left">0</td>
+<td class="left">This value will change</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">K</td>
+<td class="left">Carrying capacity</td>
+<td class="left">1,600,000</td>
+<td class="left">An estimation from the current number of dogs</td>
+<td class="left">Livestock census 2012</td>
+</tr>
+
+<tr>
+<td class="left">N0</td>
+<td class="left">Dog's population of Tamil Nadu</td>
+<td class="left">1,547,238</td>
+<td class="left">Tamil Nadu 2012 dog population: 1,547,238, area: 130,058 km<sup>2</sup> over 10,000 m<sup>2</sup></td>
+<td class="left">Livestock census 2012</td>
+</tr>
+
+<tr>
+<td class="left">b<sub>r</sub></td>
+<td class="left">Bite rates of rabid dogs to humans</td>
+<td class="left">Fitting</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">PEP</td>
+<td class="left">PEP coverage for humans</td>
+<td class="left">0.9</td>
+<td class="left">This value will change</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Delhi Meeting</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Present and Explain model to Abbas and Hiral</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Assumptions and Outputs <br  />
+
+<p>
+<i>We are using Meagan's rabies transmission model without wildlife
+in it</i>. <i>We have modeled dog vaccination as well as ABC in the model.</i>
+</p>
+</li>
+
+<li>Livestock related data (<a href="https://alyssab.shinyapps.io/OIE_india_rabies/">OIE data</a>). Is it ok to use ? <br  />
+
+<p>
+<i>We learned from NIVEDI that the spike in the Kerala data is due
+to improved surveillance. Not sure, if we trust this</i>
+</p>
+</li>
+
+<li>Discussion about Wildlife related data
+<ol class="org-ol">
+<li>No evidence of their being reservoir.
+</li>
+<li>Any sense of what are the benefits here ? <br  />
+</li>
+</ol>
+<p>
+<i>We decided that we will not include wildlife as part of</i>
+<i>transmission cycle. Also, we do not have relevant information to</i>
+<i>relate the rabid dogs to rabies in wildlife (probability tree)</i>
+<i>so we will not use wildlife as dead-end host for main</i>
+<i>analysis. But we will do additional what if analysis with</i>
+<i>wildlife as dead end host.</i>
+</p>
+</li>
+<li>Model Fitting  <br  />
+    <i>Currently we are fitting the model to the human
+incidence by fixing \(R_0\) to \(1.1\).</i>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Metric</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>What are the sectors of interest ?
+</li>
+
+<li>What are measurable quantities for each sector ?
+</li>
+
+<li>Who pays for the program ?
+</li>
+</ul>
+
+<p>
+<b>Note:</b> <i>We discussed these questions at the meeting. Abbas and</i>
+<i>Hiral are working on these currently. The third question might not</i>
+<i>be the immediate question of interest because we will mainly be</i>
+<i>emphasizing on the framework rather than the result.</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Interventions</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>What are the interventions of interest ?
+<ul class="org-ul">
+<li>Human PEP + ARV
+</li>
+<li>Human PEP + ABC
+</li>
+<li>Human PEP + ABC + ARV
+</li>
+<li>Human PEP + Culling
+</li>
+<li>Human PEP + ARV + Culling
+</li>
+<li>Washing wound with water+soap
+</li>
+<li>Awareness/Equation
+</li>
+<li>Solid waste management
+</li>
+<li>Livestock PEP
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<b>Note:</b> <i>These are some of the interventions we discussed. We will</i>
+<i>only use top 3 or 5 for now.</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Go over cost data with Abbas and Hiral</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Human related costs
+<ul class="org-ul">
+<li>Cost of vaccination
+</li>
+<li>Other associated costs
+Some of these costs are in Abbas's cost analysis paper and they
+have provided the associated data.
+</li>
+</ul>
+</li>
+<li>Livestock related costs
+<ul class="org-ul">
+<li>Hiral and Abbas provided us some data and  working to acquire more data.
+</li>
+</ul>
+</li>
+<li>Wildlife related costs
+<ul class="org-ul">
+<li>We absolutely have nothing about wildlife related cost for now
+and our analysis will be not part of main result and so we will
+do it with assumed values.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> Vaccine Efficacy</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>Humans:
+<ul class="org-ul">
+<li>Does everyone get it ?
+</li>
+<li>Is it perfect ?
+</li>
+<li>What is the coverage due to delay and other reasons ?
+</li>
+</ul>
+</li>
+<li>Dogs:
+<ul class="org-ul">
+<li>Is it perfect ?
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> Day 1</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>PHFI vision:
+<ol class="org-ol">
+<li>Modeling and intervention efficacy
+</li>
+<li>Cost Analysis
+</li>
+<li>Cost effectiveness analysis
+</li>
+<li>MCDA
+Looking at different perspective and finding the
+benefit. Feasibility of the intervention.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> Day 2</h3>
+<div class="outline-text-3" id="text-3-7">
+</div><div id="outline-container-sec-3-7-1" class="outline-4">
+<h4 id="sec-3-7-1">Papers</h4>
+<div class="outline-text-4" id="text-3-7-1">
+<ul class="org-ul">
+<li>Stray dog population demographics in Jodhpur, India following
+population control/rabies vaccination program (Sarah C. Totton)
+<ul class="org-ul">
+<li>Extracting efficacy of ABC program
+</li>
+<li>Urban setting
+</li>
+<li>Dog population pre an post ABC
+</li>
+</ul>
+</li>
+
+<li>Control of rabies in Jaipur, India by the sterlization and
+vaccination of neghbourhood  - Reece
+<ul class="org-ul">
+<li>ABC-AR dog census
+</li>
+<li>Human Rabies
+</li>
+<li>Canine Rabies
+</li>
+</ul>
+</li>
+<li>Disease control through fertility control: Secondary benefits of
+animal birth control in Indian street dogs- Yoak
+<ul class="org-ul">
+<li>Make it one the canine effectiveness outcome/measure
+</li>
+<li>Secondary benefits (?)
+</li>
+<li>Read the papers and references
+</li>
+</ul>
+</li>
+
+<li>Copy of ABC report by financial year from NJ
+<ul class="org-ul">
+<li>Follow-up grant and potential partners
+</li>
+<li>Jaipur data from 2004&#x2013;&gt;
+</li>
+</ul>
+</li>
+<li>Before 2004, Reece data from Jaipur
+<ul class="org-ul">
+<li>Mainly females till 2000 and then some males
+</li>
+<li>Strelization in males quicker (2012)
+</li>
+</ul>
+</li>
+
+<li>Rabies data
+Human:Dog ratio in Jaipur, Jodhpur and Jaiselmer
+</li>
+
+<li>Demography data in Old Jaipur/Pink  city (underestimate)
+<ul class="org-ul">
+<li>Percentage of female dogs sterlized
+</li>
+</ul>
+</li>
+<li>Guidelines say PCR is gold standard, or FAT results.
+</li>
+
+<li>ABC-AR in Haryana (Public data)
+<ul class="org-ul">
+<li>Demographic surveys in Haryana
+Unowned street dogs, Owned street dogs.
+Humanesociety.org did this all over the world
+</li>
+<li>Think about using Fig 9 from Haryana data to use for urban and
+rural dog to human density.
+</li>
+</ul>
+</li>
+<li>Tamil Nadu Veterinary and Animal Sciences University
+In chennai, Animal Rabies cases between 01.01.2014-01.01,2015
+Brain samples (most prob), Under-reporting. (Chennai).
+
+<ul class="org-ul">
+<li>Nadres Reports <br  />
+<ul class="org-ul">
+<li>Endemicity Map for whole countries. Highly under-estimation
+(2007-2011). Productivity &gt; Death. Herd disease is more
+important.
+</li>
+<li>What does outbreak mean ?
+</li>
+<li>How many cases ?
+</li>
+<li>How they report/under/over-report ?
+</li>
+<li>OIE data
+</li>
+</ul>
+</li>
+<li>Incidence of Livestock diseases in India
+</li>
+<li>Abbas's paper Rabies control in Tamil Nadu
+</li>
+<li>B.B.Singh and A.A. Gajadhar,
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Notes</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Bite data and probability of rabies after bites
+<ul class="org-ul">
+<li><b>A:</b> From <a href="https://paperpile.com/shared/gJ8QGG">Shim et al. 2009</a>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Probability description</td>
+<td class="left">Probability (binomial CIs)</td>
+</tr>
+
+<tr>
+<td class="left">Probability of developing rabies following a bite to the head by a rabid animal</td>
+<td class="left">0.55 (0.28-0.79)</td>
+</tr>
+
+<tr>
+<td class="left">Probability of developing rabies following a bite to an upper extremity by a rabid animal</td>
+<td class="left">0.22 (0.12-0.38)</td>
+</tr>
+
+<tr>
+<td class="left">Probability of developing rabies following a bite to the trunk by a rabid animal</td>
+<td class="left">0.09 (0.005-0.38)</td>
+</tr>
+
+<tr>
+<td class="left">Probability of developing rabies following a bite to a lower extremity by a rabid animal</td>
+<td class="left">0.12 (0.06-0.23)</td>
+</tr>
+</tbody>
+</table>
+</li>
+
+<li><b>B:</b> APCRI Journal Volume X, Issue II, January 2009 Page 19
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Site</th>
+<th scope="col" class="right">Number</th>
+<th scope="col" class="right">Percentage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Upper limb</td>
+<td class="right">168</td>
+<td class="right">36.1</td>
+</tr>
+
+<tr>
+<td class="left">Lower limb</td>
+<td class="right">245</td>
+<td class="right">52.7</td>
+</tr>
+
+<tr>
+<td class="left">Trunk</td>
+<td class="right">14</td>
+<td class="right">3.0</td>
+</tr>
+
+<tr>
+<td class="left">Head and Neck</td>
+<td class="right">27</td>
+<td class="right">5.7</td>
+</tr>
+
+<tr>
+<td class="left">Multiple site</td>
+<td class="right">11</td>
+<td class="right">2.5</td>
+</tr>
+
+<tr>
+<td class="left">Total</td>
+<td class="right">465</td>
+<td class="right">100</td>
+</tr>
+</tbody>
+</table>
+</li>
+
+<li><b>C:</b> APCRI Journal Volume X, Issue II, January 2009 Page 27
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Site</th>
+<th scope="col" class="right">Number</th>
+<th scope="col" class="right">Percentage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Head and Neck</td>
+<td class="right">9</td>
+<td class="right">2.81</td>
+</tr>
+
+<tr>
+<td class="left">Chest and Abdomen</td>
+<td class="right">12</td>
+<td class="right">3.75</td>
+</tr>
+
+<tr>
+<td class="left">Upper limb</td>
+<td class="right">30</td>
+<td class="right">9.37</td>
+</tr>
+
+<tr>
+<td class="left">Lower limb</td>
+<td class="right">238</td>
+<td class="right">74.37</td>
+</tr>
+
+<tr>
+<td class="left">Other</td>
+<td class="right">31</td>
+<td class="right">9.68</td>
+</tr>
+
+<tr>
+<td class="left">Total</td>
+<td class="right">320</td>
+<td class="right">100</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><b>D:</b> APCRI Journal Volume XVI, Issue II, January 2015 Page 22
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Site</th>
+<th scope="col" class="right">Number</th>
+<th scope="col" class="right">Percentage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Upper limbs</td>
+<td class="right">1223</td>
+<td class="right">31.5</td>
+</tr>
+
+<tr>
+<td class="left">Lower limbs</td>
+<td class="right">2496</td>
+<td class="right">64.3</td>
+</tr>
+
+<tr>
+<td class="left">Chest and Abdomen</td>
+<td class="right">94</td>
+<td class="right">2.4</td>
+</tr>
+
+<tr>
+<td class="left">Head and Neck</td>
+<td class="right">23</td>
+<td class="right">0.6</td>
+</tr>
+
+<tr>
+<td class="left">Multiple Sites</td>
+<td class="right">46</td>
+<td class="right">1.2</td>
+</tr>
+
+<tr>
+<td class="left">Total</td>
+<td class="right">3882</td>
+<td class="right">100.0</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>We can use the above wound specific data, and probabilities to
+calculate probability of developing rabies, given a bite by a
+rabid animal without prompt delivery of PEP. <b>Note:</b> <i>The bite data is</i>
+<i>not necessarily from rabid dogs. Will have to think about</i>
+<i>them</i>  <br  />
+    I classified the Indian data to correspond to the values from <b>A</b>
+as follows:
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">From A</th>
+<th scope="col" class="left">in B, C or D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Head/Neck</td>
+<td class="left">Head and Neck/Multiple site</td>
+</tr>
+
+<tr>
+<td class="left">Upper extremity</td>
+<td class="left">Upper limb</td>
+</tr>
+
+<tr>
+<td class="left">Trunk</td>
+<td class="left">Trunk/Other/Chest and Abdomen</td>
+</tr>
+
+<tr>
+<td class="left">Lower extremity</td>
+<td class="left">Lower limb</td>
+</tr>
+</tbody>
+</table>
+<p>
+So, we have
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">wound site</th>
+<th scope="col" class="right">Prob. from <b>B</b></th>
+<th scope="col" class="right">Prob.  from <b>C</b></th>
+<th scope="col" class="right">Prob. from <b>D</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Head/Neck</td>
+<td class="right">0.0817</td>
+<td class="right">0.0281</td>
+<td class="right">0.0178</td>
+</tr>
+
+<tr>
+<td class="left">Upper extremity</td>
+<td class="right">0.3613</td>
+<td class="right">0.0938</td>
+<td class="right">0.3150</td>
+</tr>
+
+<tr>
+<td class="left">Trunk</td>
+<td class="right">0.0301</td>
+<td class="right">0.1344</td>
+<td class="right">0.0242</td>
+</tr>
+
+<tr>
+<td class="left">Lower extremity</td>
+<td class="right">0.5269</td>
+<td class="right">0.7438</td>
+<td class="right">0.6430</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">Prob. of developing rabies without PEP</td>
+<td class="right">0.1904</td>
+<td class="right">0.1374</td>
+<td class="right">0.1584</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<i>Note that the data from <b>B</b> has more sample and close to the</i>
+<i>probability in Tanzania</i>
+</p>
+</li>
+
+<li>There are 2500 dispensaries in the state of Tamil Nadu and it gets
+only about 50 ARV vaccines per year. This probably runs out in a
+week. People who can afford can get it from private pharmacies.
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Things to do</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> <span class="done DONE">DONE</span> Provide Exposure Humans (Low, Medium, High).</h3>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> <span class="todo TODO">TODO</span> Provide results divided as urban and rural settings.</h3>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> <span class="done DONE">DONE</span> Remove livestock columns</h3>
+</div>
+
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> <span class="todo TODO">TODO</span> Predictions with ABC</h3>
+</div>
+</div>
+
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Stakeholder's Meeting</h2>
+<div class="outline-text-2" id="text-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Parameters</th>
+<th scope="col" class="left">Definitions</th>
+<th scope="col" class="left">Values</th>
+<th scope="col" class="left">Derivation</th>
+<th scope="col" class="left">Ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">b<sub>D</sub></td>
+<td class="left">Dog's birthrate</td>
+<td class="left">0.0015</td>
+<td class="left">.475 pregnancies*5 pups per litter(median)*366969 female dogs/1547238 dogs*(1/365 days)</td>
+<td class="left">Totton 2010</td>
+</tr>
+
+<tr>
+<td class="left">&mu;<sub>D</sub></td>
+<td class="left">Dog's frequency dependent death rate</td>
+<td class="left">b<sub>D</sub>/1.1</td>
+<td class="left">1/lifespan of 1.9 years at birth/365&#x2013;boosted a bit based on non-normal distribution</td>
+<td class="left">Reece 2008</td>
+</tr>
+
+<tr>
+<td class="left">&beta;<sub>DD</sub></td>
+<td class="left">Dog to Dog transmission rate</td>
+<td class="left">-</td>
+<td class="left">We are fitting this now in form of R<sub>0</sub></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&gamma;<sub>D</sub></td>
+<td class="left">Dog's density dependent death rate</td>
+<td class="left">\((b_D-mu_D)/K\)</td>
+<td class="left">-</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&sigma;<sub>D</sub></td>
+<td class="left">Incubation rate in dogs</td>
+<td class="left">0.045</td>
+<td class="left">1/incubation period</td>
+<td class="left">Hampson 2009</td>
+</tr>
+
+<tr>
+<td class="left">&alpha;<sub>D</sub></td>
+<td class="left">Rabies induced death rate in dogs</td>
+<td class="left">0.32</td>
+<td class="left">-</td>
+<td class="left">Hampson 2009</td>
+</tr>
+
+<tr>
+<td class="left">v<sub>D</sub></td>
+<td class="left">Vaccination rate in dogs</td>
+<td class="left">0</td>
+<td class="left">This value will change</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">K</td>
+<td class="left">Carrying capacity</td>
+<td class="left">1,600,000</td>
+<td class="left">An estimation from the current number of dogs</td>
+<td class="left">Livestock census 2012</td>
+</tr>
+
+<tr>
+<td class="left">N0</td>
+<td class="left">Dog's population of Tamil Nadu</td>
+<td class="left">1,547,238</td>
+<td class="left">Tamil Nadu 2012 dog population: 1,547,238, area: 130,058 km<sup>2</sup> over 10,000 m<sup>2</sup></td>
+<td class="left">Livestock census 2012</td>
+</tr>
+
+<tr>
+<td class="left">b<sub>r</sub></td>
+<td class="left">Bite rates of rabid dogs to humans</td>
+<td class="left">Fitting</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">PEP</td>
+<td class="left">PEP coverage for humans</td>
+<td class="left">0.9</td>
+<td class="left">This value will change</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> My slides</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>After developing the model, we needed to parametrize and validate
+it with data from India. For this, we used various resources from
+literature. For example, for dog's demography data, we used
+Livestock census done in 2012 to get an estimate of Stray and
+Owned dogs in Tamil Nadu as well as their breakdown to female and
+male dogs. Owned dogs were about 8.9 lakhs in Tamil Nadu as
+opposed to 6.4 lakhs stray dogs.
+</li>
+
+<li>We used data from a study by Sarah Totton published in Preventive
+Vetinery medicine in conjunction with Livestock census data to
+estimate the Dogs birth rate and used estimates of incubation
+period in dogs as well as Rabies induced mortality rate in dogs
+from an another study by Hampson that was  published PLos
+Biology.
+We calibrated our model to estimated Rabies deaths data in humans
+for Tamil Nadu in year 2002 and for the model calibration, we
+assumed that the canine vaccination coverage was about 25% and
+PEP coverage in Human was 60%.
+</li>
+
+<li>For the model fitting to human rabies deaths, the connection was
+made through the rabid dog bites. i.e., human death
+happens when no PEP was given upon bite from a Rabid dog. The top
+figure is the distribution of Rabies deaths in humans that our
+transmission model was fitted to and as a result of model
+fitting, we found that the canine rabies reproductive number in
+India was between 1.1-1.24. And by reproductive number here, we mean
+the average number of dogs a rabid dog infects during its
+infectious period in an otherwise fully susceptible dog
+population. It also, means that to control Rabies transmission in
+dogs this number needs to be pushed below 1.
+</li>
+
+<li>After the model validation through fitting, we obtained model
+predictions under various control interventions. But to run the
+control interventions like ARV or ARV along with the
+sterlization, we had to make some assumptions. For example, for
+ARV, we assumed that dog owners who currently pay to vaccinate
+their dogs would start to use subsidized clinics once the
+intervention starts. And for the sterlization strategy, we
+assumed that about 50% of current dog owners would be willing to
+discontinue dog ownership in the future. Also, that as more and
+more dogs are captured and sterilized, capturing unsterilized
+dogs would become more difficult resulting in reduction in
+efficiency of dog catchers. For this, we used a functional form
+like this, which ensures that when only 10% of unsterilized
+fertile female dogs are left, the efficiency of catching dogs
+declines steeply.
+</li>
+
+<li>Next, Meagan will talk about some of our model predictions.
+</li>
+</ul>
+
+<p>
+<b>Note:</b> Vaccination coverage 25%,  Human PEP 60%. Last slide. About R0.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Delhi Meeting</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>1st paper (Modeling papers)
+<ul class="org-ul">
+<li>Introduce and add the idea of female only ABC-ARV.
+</li>
+<li>Results based on  human health and money.
+</li>
+<li>Cost analysis and effectiveness of human analysis.
+</li>
+</ul>
+</li>
+
+<li>2nd paper
+<ul class="org-ul">
+<li>Framework
+</li>
+<li>One Health
+</li>
+<li>Economic analysis of Animal,Human and Canine population.
+</li>
+</ul>
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Next Steps
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Analysis</th>
+<th scope="col" class="left">Report</th>
+<th scope="col" class="left">Proposal</th>
+<th scope="col" class="left">CEA (Paper 1)</th>
+<th scope="col" class="left">IP (Paper 2)</th>
+<th scope="col" class="left">Policy (Paper 3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">?</td>
+<td class="left">Dec 15, 2015</td>
+<td class="left">Nov 4, 2015</td>
+<td class="left">March, 2016</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Minor re-fitting</td>
+<td class="left">&#xa0;</td>
+<td class="left">scale up-down (Incremental capacity)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Dog ownership question</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Influx-outflow  ?</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Bite rate data ?</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">Urban/Rural</td>
+<td class="left">Urban &amp; Rural together</td>
+<td class="left">Urban/Rural</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Adding re-vaccination</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Paper</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Decline in Dog population under different strate
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Abhishek Pandey</p>
+<p class="date">Created: 2015-10-27 Tue 15:33</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.0.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

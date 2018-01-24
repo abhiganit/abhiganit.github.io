@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>HAT</title>
+<!-- 2015-10-27 Tue 15:24 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Abhishek Pandey" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">HAT</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Introduction </a>
+<ul>
+<li><a href="#sec-1-1">1.1. Gambian HAT</a></li>
+<li><a href="#sec-1-2">1.2. Tsetse fly</a></li>
+<li><a href="#sec-1-3">1.3. Trypanosome biology</a></li>
+<li><a href="#sec-1-4">1.4. Control for Gambian HAT</a></li>
+<li><a href="#sec-1-5">1.5. Usefulness of HAT models</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Data </a>
+<ul>
+<li><a href="#sec-2-1">2.1. Available data</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Model  </a>
+<ul>
+<li><a href="#sec-3-1">3.1. Model Equations</a></li>
+<li><a href="#sec-3-2">3.2. Model Parameters</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. Model Fitting</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Populations</a></li>
+<li><a href="#sec-4-2">4.2. Fitting</a></li>
+<li><a href="#sec-4-3">4.3. Likelihood</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. Notes </a></li>
+<li><a href="#sec-6">6. Things to do</a>
+<ul>
+<li><a href="#sec-6-1">6.1. <span class="todo TODO">TODO</span> Run the model to equilibrium and afterwards.</a></li>
+<li><a href="#sec-6-2">6.2. <span class="todo TODO">TODO</span> Estimate the transmission parameters and control effectiveness.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction <a id="Introduction" name="Introduction"></a></h2>
+<div class="outline-text-2" id="text-1">
+
+<div id="fig:ModelFits" class="figure">
+<p><img src="Tbrucei.jpg" alt="Tbrucei.jpg" align="right" height="250px" width="250px" />
+</p>
+</div>
+
+<p>
+Human African Trypanosomiasis (HAT), which is fatal if left untreated,
+continues to present a serious health risk to humans in vast regions
+of Sub-Saharan Africa. It is caused by two sub-species of the
+protozoan parasite <i>Trypanosoma brucei</i> (<i>T.b.</i>), and is transmitted by
+tsetse flies. The sub-species, <i>T.b. gambiense</i>, is responsible for the
+majority of reported cases of HAT, and is transmitted by tsetse
+flies. Over the last decade, expanded control efforts have led to a
+decline in the number of new HAT cases, spurring the WHO to include
+<i>T.b. gambiense</i> HAT on its roadmap for 2020 elimination.
+</p>
+
+<p>
+To inform implementation of WHO's elimination goal, it is imperative
+to understand the likelihood of whether the control interventions are
+sufficient and, if not what other complementary strategies would
+synergistically facilitate achieving the 2020 target.
+</p>
+
+<p>
+We developed a <a href="#Model">mathematical model for Gambian HAT</a> to evaluate vector
+control as well as screen and treat strategies. We will calibrate our
+model to data from  various "foci of infection" such that they vary in
+terms of transmission intensity or/and ecological settings. Currently,
+we are trying to use data from Boffa, Guinea which is classified as
+"medium transmission intensity" foci and where livestock play a
+limited role in HAT transmission cycle.
+</p>
+
+
+<p>
+A brief introduction to various aspects of Gambian HAT and tsetse fly follows:
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Gambian HAT</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Gambian HAT is caused by <i>T.b.gambiense</i> and transmitted by the
+<i>Palpalis</i>-group species of tsetse, particularly subspecies of
+<i>Glossina fuscipes</i> and <i>Glossina palpalis</i>. This group of tsetse
+is commonly known as <b>riverine tsetse</b> and generally infest
+relatively humid habitats fringing the rivers, lake shores and
+wetlands of West and Central Africa.
+</p>
+
+<p>
+The disease progress over several years from the initial symptoms
+of fever, headaches and lymphadenopathy (Stage I) through
+neuropsychiatric disorders (Stage II) and sleep disturbance (hence
+the name) and in most cases death.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Tsetse fly</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<div id="fig:ModelFits" class="figure">
+<p><img src="tsetse.jpg" alt="tsetse.jpg" align="right" height="250px" width="250px" />
+</p>
+</div>
+
+<p>
+In contrast to other vectors like mosquitoes, blackflies and
+sandflies, both sexes of tsetse rely exclusively on blood for all
+their nutritional needs. Tsetse become infected after feeding on an
+infected host. The trypanosomes undergo a complex process of
+maturation in the fly and after a period of about 20-40 days the
+infective forms appear in the salivary glands of the fly which,
+thereafter remains potentially infective to any humans it
+bites. Most flies are inherently refractory to infection and even
+those that are not refractory to infection are most susceptible
+during their first blood meal.
+</p>
+
+<p>
+Tsetse have an unusual form of reproduction, termed adenotrophic
+viviparity, in which the larva develops within the female. From the
+age of about 6 days, adult females produce a single egg which
+matures in the uterus for about 7-12 days, the duration being
+dependent of temperature. A single mature third-stage larva is
+deposited by the female on loose soil and it burrows into the
+ground and pupates. The time to deposition for subsequent larvae is
+shorter than for the first offspring and the time between
+offspring decreases with increasing temperature. A mature adult fly
+emerges 20-40 days after deposition and this pupal duration also
+decreases with increasing temperature. This resultant low rate of
+reproduction is only sustainable because of relatively long life
+span of tsetse flies.
+</p>
+<ul class="org-ul">
+<li><b><i>Mortality</i></b>: In one field study, female mortality was about 10%
+per day in newly emerged flies, fell to about 2% by age 10 days,
+increasing slowly thereafter. The pattern was similar for male
+but mortality increased much more rapidly with age. The changes
+relate to low-fat levels and poorly developed flight musculature
+in newly emerged flies, resulting in the double difficulty of
+needing to find and feed on a host rapidly but with a limited
+flight capacity. Accordingly, many young tsetse flies either die
+of starvation, or by attempting to feed off high-risk hosts such
+as humans. Those that do feed successfully build up energy
+reserves and flight muscles, and subsequent mortality
+declines. Increased mortality in older flies is associated with
+increased wing wear resulting in diminished flight
+capacity. Adult mortality also increases with temperature and may
+be up to six times as high in the hot part of the year as in the
+cool part.
+</li>
+<li><b><i>Abundance and distribution</i></b>: Tsetse populations are able to
+persist at remarkably low densities. Obtaining reliable estimates
+of absolute densities of tsetse for sparse populations is
+difficult, but it seems likely that they can survive at densities
+of 1 tsetse/km<sup>2</sup> or less, while maximum densities seems to be in
+order of 10,000 tsetse/km<sup>2</sup>.
+Tsetse are highly mobile, moving up to 1 km per day. For the more
+typical habitats of riverine tsetse, flies are confined to the
+vegetation fringing rivers and lakes and hence displacement is
+largely along river margins and lake shores. The important
+consequence of the high mobility of tsetse is that populations of
+tsetse are seldom isolated and hence migration of tsetse into and
+out of an HAT focus is the norm.
+</li>
+<li><b><i>Feeling interval</i></b>: Male and females are obligate blood feeders
+obtaining meals at 2-5 day intervals. The blood meal provides all
+of the fly's requirements for energy, water and growth, including
+production of larvae. Hence for tsetse, it imperative to find and
+feed on a host regularly to avoid starvation. The defensive
+behavior of hosts and predatory insects (e.g. Asilidae (robber or
+assassin flies) and Bembicidae (a family of wasps)) in the host
+vicinity also pose a risk to feeding tsetse.
+</li>
+<li><b><i>Host selection</i></b>: Tsetse use a combination of olfactory and
+visual cues to locate their hosts. In general savannah tsetse
+feed on Suidae and Bovidae, particularly warthog and buffalo in
+wilderness area and cattle where they are present. Humans are
+rarely bitten by savannah tsetse; odours and visual stimuli
+produced by humans are repellant and those who do bite humans
+tend to be young and/or in an advanced stage of
+starvation. Riverine tsetse have broader range of hosts which can
+include primates, Suidae, Bovidae and reptiles, particularly the
+Nile monitor lizard. Humans are not repellent to riverine tsetse
+and as a consequence, humans can form an important part of their
+diet.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Trypanosome biology</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+The latent period between initial inoculation of <i>T.brucei</i> and a
+mammalian host becoming infectious is about 7-14 days. The
+duration of subsequent infection ranges between several months and
+years and is strongly right-skewed with some cases persisting for
+many years without morbidity or death. The mean duration for stage
+I is 17 months and for stage II is 16 months. Severe illness and/or
+hospitalization during stage II may effectively remove the human
+host from the population of hosts by preventing contact with tsetse
+flies, in which case the mean duration of infectiousness would be
+17 months.
+</p>
+
+<p>
+The probability of a fly being infected depends not only on the
+levels of parasitaemia in the host but also the age, nutritional
+condition, sex and species of the fly itself. The 'teneral
+effect'. Newly emerged unfed tsetse ('teneral' flies) that are
+typically less than 3 days old are much more susceptible to
+infection with subspecies of <i>T.brucei</i> at their first blood meal
+than older flies.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Control for Gambian HAT</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Due to the absence of a vaccine, intervention strategies against
+HAT rely on vector control and on active and passive case detection
+followed by treatment. These two strategies were initially
+effective, and the disease was nearly eradicated in the early
+1960s. However, a collapse of surveillance and control activities
+int he endemic countries, often due to periods of political
+instability, led to progressive re-emergence of the disease since
+early 1990s.
+</p>
+
+<p>
+Since the resurgence of HAT, expanded control activities has
+facilitated an overall decline in the number of new cases of HAT
+being reported to WHO annually. The achievements of the past 20
+years have been realized almost exclusively through active case
+detection and treatment. Screening of the population is based on
+the use of Card Agglutination Test for Trypanosomiasis followed by
+staging of positive cases through examination of the cerebrospinal
+fluid which involves a lumbar puncture.
+</p>
+
+<p>
+Currently, the drugs used to treat Gambian HAT are <b>pentamidine</b>
+for stage I and <b>nifurtimox-eflornithine</b> combination therapy for
+stage II. While vector control has not been an important part of
+efforts against Gambian sleeping sickness, the recent development
+of cost-effective methods to control riverine tsetse suggests that
+tsetse control will form an important part of efforts to eliminate
+Gambian HAT in the future.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Usefulness of HAT models</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+The few models of HAT that exist suggest that elimination of HAT
+will not require killing the last fly or finding and treating the
+last case. Rather, reducing the mean infectious period of humans
+through case detection and treatment, and reducing the longevity
+and density of tsetse flies through vector control may eliminate
+transmission. There are many questions that HAT models can be used
+to answer:
+</p>
+<ul class="org-ul">
+<li>What percentage of a human population needs to be screened and
+treated to eliminate a focus of Gambian HAT transmission ?
+</li>
+<li>At what frequency should such a screen and treat program be
+repeated ?
+</li>
+<li>What deduction in the density and longevity of tsetse flies is
+required to eliminate transmission of HAT ?
+</li>
+<li>How long must interventions be applied to eliminate a focus ?
+</li>
+<li>Why is HAT not more widespread, and will movement of reservoir
+hosts, tsetse or infected humans cause it to spread ?
+</li>
+<li>How does HAT persist at the low levels of prevalence that have
+been measured in humans and tsetse flies ?
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Data <a id="Data" name="Data"></a></h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Available data</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><a href="https://yale.box.com/s/m97pwh49q06gx1kpewlo8kvqonnlpq3a">Plot of prevalence data</a>
+</li>
+<li><a href="https://yale.box.com/s/e705at3aex2mfk1uuvn3kpu08npzi6tu">Age Distribution of HAT</a>
+</li>
+<li><a href="https://yale.box.com/s/3q1l07fqc3soqlybgry0ma83s6v8afen">Summary of Data</a>
+</li>
+<li><a href="https://yale.box.com/s/vtgrqvq8jnb6p720ikeppwxktma152rf">Survey Results</a>
+</li>
+<li><a href="https://yale.box.com/s/c9mcd49gjwsscgft6o63ntriieds2bw0">Between 1997-2009</a>
+</li>
+<li><a href="https://yale.box.com/s/0mckj4zi9vkhxukuy1gdzanyv2swntv4">Disease Stages</a>
+</li>
+<li><a href="https://yale.box.com/s/nn813nnckjf0ulp6304lkzbyjv191l4r">Some other data from papers</a>
+</li>
+</ul>
+
+<p>
+<b>NOTE:</b>
+</p>
+<ol class="org-ol">
+<li>Before 2008, no medical survey by mass screening was performed
+in the area and all HAT cases were diagnosed passively in that
+period.
+</li>
+<li>Before 2008, no medical survey by mass screening was performed
+in the area and all HAT cases were diagnosed passively in that
+period.
+</li>
+<li>In 2008 and 2010 medical surveys were organized by  mass
+screening but only in selected villages (where new cases had
+been passively diagnosed in the previous years).
+</li>
+<li>In 2012 and 2013, all villages from the area were included in
+the surveys.
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Model  <a id="Model" name="Model"></a></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+We constructed a three-species SEIR differential-equation model for
+<i>T.b.gambiense</i> trypanosome infection among tsetse, humans and
+livestocks based on previous work <a href="https://paperpile.com/shared/tqKyau">Rogers</a>. The population of each
+species: tsetse (V), humans (H) and livestocks (L) is divided into 4
+states: susceptible (V<sub>S</sub>, H<sub>S</sub>, L<sub>S</sub>), exposed (V<sub>E</sub>, H<sub>E</sub>, L<sub>E</sub>),
+infectious (V<sub>I</sub>, H<sub>I<sub>1</sub></sub>, H<sub>I<sub>2</sub></sub> L<sub>I</sub>) and recovered (V<sub>R</sub>, H<sub>R</sub>, L<sub>R</sub>)
+respectively.
+</p>
+
+
+<div id="fig:ModelDiagram" class="figure">
+<p><img src="General-HAT-Model.png" alt="General-HAT-Model.png" height="500px" width="720px" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><b>Tsetse Dynamics:</b>
+Susceptible tsetse can only become infected during their first blood
+meal, which they take with rates a<sub>H</sub> and a<sub>L</sub> on humans and
+livestocks respectively. Tsetse do not become infected, if they do
+not become infected during a period of time (1/&sigma;<sub>V</sub>) immediately
+after emergence. After an incubation period of 1/&tau;<sub>V</sub>, tsetse
+become infectious and do not recover and finally die. <br  />
+  Birth and death rate: We take birth rate for tsetse (B<sub>V</sub>) to be
+constant, whereas the death rate to be increasing quadratic to
+measure the effect of intra-species competition on death rate:
+\[\mu_V = \mu_{V_0} (1+\mu_{V_1}V) \]
+where &mu;<sub>V<sub>0</sub></sub> is the death
+rate in the absence of intra-species competition, while &mu;<sub>V<sub>1</sub></sub>
+measures the effect of intra-species competition on death
+rate.
+</li>
+
+<li><b>Vector Control</b>:
+The vector control methods to be considered are:
+<ul class="org-ul">
+<li><i>Traps, Insecticide</i>
+</li>
+<li><i>Sterilized male release</i>
+</li>
+</ul>
+</li>
+
+<li><b>Human Dynamics:</b>
+ Humans become infected when bitten by an infected tsetse with
+probability &beta;<sub>H</sub>, incubate for a period of 1/&tau;<sub>H</sub> , and then
+are stage I infectious. Without treatment individuals in stage I
+progress to stage II after a duration of 1/&gamma;<sub>H<sub>1</sub></sub> and dies
+after a duration of 1/&gamma;<sub>H<sub>2</sub></sub> if  left untreated in stage II.
+We assume that only tsetse become infected only after biting stage I
+infectious individuals as stage II infectious are severely ill at
+home or hospital and thus hardly come in contact with tsetse. /The
+foci of infection for Gambian HAT that we are considering are from
+rural areas and it may be reasonable to assume that the population
+is stable and so we assume population to be constant by making rate
+birth rate equal to the natural and disease/treatment induced death
+rates.
+</li>
+<li><b>Human Treatment:</b> Case detection and treatment still remains one
+of the primary methods of controlling gambiense HAT. The case
+detection is conducted by active case-finding through mobile teams
+or when patients visit health structures (passive case finding).
+In our model, the rate at which an infectious individual in any
+stage receive treatment depends on efficacy and coverage of
+treatment. The coverage of treatment at stages I and II is defined
+by parameters &phi;<sub>1</sub> and &phi;<sub>2</sub> as
+\[ \phi_i = P_i P_{i+/D} P_{iT/+}\]
+where for i = 1, 2, P<sub>i</sub> is the probability that a stage i patient
+gets a CATT test, P<sub>i+/D</sub> is sensitivity of the diagnostic tests
+that is the probability that a stage i patient gets a positive CATT
+test and a positive parasitology test, and P<sub>iT/+</sub> is the
+probability that a stage i patient gets treatment after getting
+positive CATT test and a positive parasitology test. <br  />
+  A stage I patient remains in stage I and later progresses to stage
+II in case of treatment failure. Similarly, treatment failure in
+stage II results into patient either remaining stage II infectious
+and later dying due to the disease or dying due to the side effects
+of the stage II treatment with a rate of p<sub>2</sub>.
+</li>
+<li><b>Livestock Dynamics:</b> Livestocks are modeled similar to humans, but
+only one infectious class is considered. Livestock can become
+infected after being bitten by an infected tsetse with probability
+&beta;<sub>L</sub>, incubate infection for a period of 1/tau<sub>L</sub> and are
+infectious for a period of 1/&gamma;<sub>L</sub> and then immune for a period
+of 1/&delta;<sub>L</sub>. Few concerns regarding Livestock modeling/dynamics:
+<ul class="org-ul">
+<li>Do Livestock die from AAT/nagna ?
+</li>
+<li>Are we only treating Livestock as reservoir ? Then, do we need
+full dynamics ?  <i>Not important for Boffa</i>.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Model Equations</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>\(Tsetse:\)
+</li>
+</ul>
+ \begin{equation}
+\label{tsetse_eqns}
+\begin{split}
+\frac{d V_P}{d t} & = B_V V - \eta V_P \\
+\frac{d V_S}{d t} & = \eta V_P - (a_H +a_L + \sigma_V + \mu_V)V_S,   \\
+\frac{d V_E}{d t} & = (a_H \lambda_{VH} + a_L \lambda_{VL})V_S - (\tau_V +\mu_V)V_E, \\
+\frac{d V_I}{d t} & = \tau_V V_E - \mu_V V_I, \\
+\frac{d V_R}{d t} &  = [a_H(1-\lambda_{VH})+a_L(1-\lambda_{VL})+\sigma_V]V_S - \mu_V V_R,
+\end{split}
+\end{equation}
+<ul class="org-ul">
+<li>\(Human:\)
+</li>
+</ul>
+\begin{equation}
+\label{human_eqns}
+\begin{split}
+\frac{d H_S}{d t} &  = B_H  + \delta_H H_R - a_H \beta_{VH} \beta_H V_I \frac{H_S}{H} -\mu_H H_S, \\
+\frac{d H_E}{d t} & =  a_H \beta_{VH}\beta_H V_I \frac{H_S}{H} - [\tau_H H_E +\mu_H] H_E , \\
+\frac{d H_C}{d t} & = (1-\nu_H)\tau_H H_E - \alpha (\gamma_{H_C} +\mu_H) H_C, \\
+\frac{d H_{I_1}}{d t} &  = \nu_H \tau_H H_E +[-\phi_1 \epsilon_1 \zeta_1  -
+(1-\phi_1)\gamma_{H_1}-\mu_H] H_{I_1}, \\
+\frac{d H_{I_2}}{d t} & = (1-\phi_1)\gamma_{H_1} H_{I_1} + [-\phi_2 \epsilon_2 \zeta_2
+ - (1-\phi_2)\gamma_{H_2} -\phi_2(1-\epsilon_2)p_2 \zeta_2 -\mu_H] H_{I_2}, \\
+\frac{d H_R}{d t} & =  \phi_1 \epsilon_1 \zeta_1 H_{I_1}+ \phi_2 \epsilon_2 \zeta_2 H_{I_2}+\alpha \gamma_{H_C} H_C -(\delta_H+\mu_H) H_R,
+\end{split}
+\end{equation}
+<p>
+where \(B_H = \mu_H H + [(1-\phi_2)\gamma_{H_2} + \phi_2(1-\epsilon_2)p_2]H_{I_2}\)
+</p>
+<ul class="org-ul">
+<li>\(Livestock:\)
+</li>
+</ul>
+\begin{equation}
+\label{livestock_eqns}
+\begin{split}
+\frac{d L_S}{d t} &  = \delta_L L_R - a_L\beta_L V_I \frac{L_S}{L}, \\
+\frac{d L_E}{d t} & = a_L\beta_L V_I\frac{L_S}{L} - \tau_L L_E, \\
+\frac{d L_I}{d t} &  = \tau_L L_E - \gamma_L L_I, \\
+\frac{d L_R}{d t} & = \gamma_L L_I-\delta_LL_R.
+\end{split}
+\end{equation}
+
+<p>
+The probabilities of a susceptible tsetse becoming infected from a blood meal
+from humans and animal hosts repectively are
+</p>
+\begin{equation}
+\label{prob}
+\begin{split}
+\lambda_{VH} & = \beta_{VH} \frac{H_{I_1} +\kappa_1 H_C + \kappa_2 H_{I_2} }{H}, \\
+\lambda_{VL} &  = \beta_{VL} \frac{L_I}{L}.
+\end{split}
+\end{equation}
+<p>
+where \(\beta_{VH}\) and \(\beta_{VL}\) are transimission probabilities from
+human to tsetse and animal hosts to tsetse respectively and \(\kappa\)
+is 0 or 1 depending on our belief about whether individuals in stage
+II contribute to transmission or not.
+</p>
+
+<p>
+The total population sizes are given by \(V = V_S + V_E + V_I + V_R\) for tsetse,
+\(H = H_S + H_E + H_I + H_R\) for humans and \(L = L_S + L_E + L_I + L_R\)
+for animal hosts. The model parameters and their estimates used from
+literature that are used in simulations are in the table below.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Model Parameters</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li><b><i>Tsetse</i></b> <br  />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Parameter</th>
+<th scope="col" class="left">Definition</th>
+<th scope="col" class="left">Value</th>
+<th scope="col" class="left">Interval</th>
+<th scope="col" class="left">Reference</th>
+<th scope="col" class="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(1/\eta\)</td>
+<td class="left">Duration of pupae stage in tsetse</td>
+<td class="left">\(20\)</td>
+<td class="left">\(20-40 ~d\)</td>
+<td class="left"><a href="https://paperpile.com/shared/c3Tolh">Rock et al. 2015</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(B_V\)</td>
+<td class="left">Tsetse constant birth rate</td>
+<td class="left">\(0.05 ~d^{-1}\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(\mu_{V_0}\)</td>
+<td class="left">Tsetse death rate without competition</td>
+<td class="left">\(0.025 ~d^{-1}\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(\mu_{V_1}\)</td>
+<td class="left">Death rate competition parameter</td>
+<td class="left">\(0.0002\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Assumed</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\sigma_V\)</td>
+<td class="left">Susceptibility period in tsetse</td>
+<td class="left">\(1 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(a_H\)</td>
+<td class="left">Tsetse human biting rate</td>
+<td class="left">\(0.075 ~d^{-1}\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(a_L\)</td>
+<td class="left">Tsetse livestock biting rate</td>
+<td class="left">\(0.175 ~d^{-1}\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(\beta_{VH}\)</td>
+<td class="left">Proportions of tsetse bites on humans</td>
+<td class="left">\(0.065\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">Being estimated</td>
+</tr>
+
+<tr>
+<td class="left">\(\beta_{VL}\)</td>
+<td class="left">Trans. prob. from livestock to tsetse</td>
+<td class="left">\(0.065\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\tau_V\)</td>
+<td class="left">Incubation period in tsetse</td>
+<td class="left">\(25 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">V</td>
+<td class="left">Tsetse population size (carrying capacity)</td>
+<td class="left">\(1634\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Assumed</td>
+<td class="left">Derived</td>
+</tr>
+</tbody>
+</table>
+</li>
+
+<li><b><i>Human</i></b> <br  />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Parameter</th>
+<th scope="col" class="left">Definition</th>
+<th scope="col" class="left">Value</th>
+<th scope="col" class="left">Interval</th>
+<th scope="col" class="left">Reference</th>
+<th scope="col" class="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(\mu_H\)</td>
+<td class="left">Human constant death rate</td>
+<td class="left">\(1/55~y^{-1}\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Google</td>
+<td class="left">To update</td>
+</tr>
+
+<tr>
+<td class="left">\(\beta_H\)</td>
+<td class="left">Trans. prob. from tsetse to humans</td>
+<td class="left">\(0.62\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">Being estimated</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\tau_H\)</td>
+<td class="left">Incubation period in humans</td>
+<td class="left">\(12 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\gamma_{H_1}\)</td>
+<td class="left">Stage I infectious period without treatment</td>
+<td class="left">\(1/(365*0.0019) ~y\)</td>
+<td class="left">\(0.98-2.28 ~y\)</td>
+<td class="left"><a href="https://paperpile.com/shared/jz7HRk">Checchi et al. 2008</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\gamma_{H_2}\)</td>
+<td class="left">Stage II infectious period  without treatment</td>
+<td class="left">\(1/(365*0.0020) ~y\)</td>
+<td class="left">\(0.95-2.11 ~y\)</td>
+<td class="left"><a href="https://paperpile.com/shared/jz7HRk">Checchi et al. 2008</a></td>
+<td class="left">Check their new paper</td>
+</tr>
+
+<tr>
+<td class="left">H</td>
+<td class="left">Human population size</td>
+<td class="left">\(300\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Assumed</td>
+<td class="left">Derived</td>
+</tr>
+</tbody>
+</table>
+</li>
+
+<li><b><i>Livestock</i></b> <br  />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Parameter</th>
+<th scope="col" class="left">Definition</th>
+<th scope="col" class="left">Value</th>
+<th scope="col" class="left">Interval</th>
+<th scope="col" class="left">Reference</th>
+<th scope="col" class="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(\beta_L\)</td>
+<td class="left">Trans. prob. from tsetse to livestock</td>
+<td class="left">\(0.62\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\tau_L\)</td>
+<td class="left">Incubation period in livestock</td>
+<td class="left">\(12 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\gamma_L\)</td>
+<td class="left">Infectious period in livestock</td>
+<td class="left">\(50 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\delta_L\)</td>
+<td class="left">Immune period in Livestock</td>
+<td class="left">\(50 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</li>
+
+<li><b><i>Treatment</i></b> <br  />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Parameter</th>
+<th scope="col" class="left">Definition</th>
+<th scope="col" class="left">Value</th>
+<th scope="col" class="left">Interval</th>
+<th scope="col" class="left">Reference</th>
+<th scope="col" class="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(P_1\)</td>
+<td class="left">Probability a stage I individual gets a CATT test</td>
+<td class="left">\(0.0\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Assumed</td>
+<td class="left">prior active surv.</td>
+</tr>
+
+<tr>
+<td class="left">\(P_{1+/D}\)</td>
+<td class="left">Probability a stage I individual gets a positive CATT and positive parasitology test</td>
+<td class="left">\(0.87\)</td>
+<td class="left">\(0.87-0.98\)</td>
+<td class="left"><a href="https://paperpile.com/shared/ea9YR0">Brun et al. 2010</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(P_{1T/+}\)</td>
+<td class="left">Probability a stage I individual gets treated upon getting positive CATT and positive parasitology test</td>
+<td class="left">\(1\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Data</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(P_2\)</td>
+<td class="left">Probability a stage II individual gets a CATT test</td>
+<td class="left">\(1\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">-</td>
+<td class="left">prior active surv.</td>
+</tr>
+
+<tr>
+<td class="left">\(P_{2+/D}\)</td>
+<td class="left">Probability a stage II individual gets a positive CATT and positive parasitology test</td>
+<td class="left">&#xa0;</td>
+<td class="left">\(0.87-0.98\)</td>
+<td class="left"><a href="https://paperpile.com/shared/ea9YR0">Brun et al. 2010</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(P_{2T/+}\)</td>
+<td class="left">Probability a stage II individual gets treated upon getting positive CATT and positive parasitology test</td>
+<td class="left">\(1\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">Data</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(\epsilon_1\)</td>
+<td class="left">Efficacy of stage II treatment (pentamidine)</td>
+<td class="left">\(0.94\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/mTj51B">Doua et al. 1996</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(\epsilon_2\)</td>
+<td class="left">Efficacy of stage II treatment (nifurtimox-eflornithine)</td>
+<td class="left">\(0.965\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/cTV6IV">Priotto et al. 2009</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\zeta_1\)</td>
+<td class="left">Treatment period for stage I patients</td>
+<td class="left">-</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">irrelevant prior active surv.</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\zeta_2\)</td>
+<td class="left">Treatment period for stage II patients</td>
+<td class="left">-</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">Being estimated</td>
+</tr>
+
+<tr>
+<td class="left">\(p_2\)</td>
+<td class="left">Probability of death due to stage II treatment failure (nifurtimox-eflornithine)</td>
+<td class="left">\(0.007\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/cTV6IV">Priotto et al. 2009</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(1/\delta_H\)</td>
+<td class="left">Immune period in Humans after treatment</td>
+<td class="left">\(50 ~d\)</td>
+<td class="left">&#xa0;</td>
+<td class="left"><a href="https://paperpile.com/shared/YCjv50">Rogers 1988</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Model Fitting</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+We are using Bayesian Melding for fitting the parameters
+\(\beta_{VH}\), \(\beta_{H}\) and \(1/zeta_{2}\).
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Populations</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>We decided to concentrate on only Boffa East Mainland, because
+there is data from here for each year.
+</li>
+<li>The human population is assumed to be constant and from data,
+total population in Boffa East Mainland is 14500.
+</li>
+<li>We run the density dependent model with 34 inhabitants/km<sup>2</sup>
+<a href="https://paperpile.com/shared/ps4VfN">(Kagbadouno et al. 2012</a>) and 5000 tsetse /km<sup>2</sup>. In the model,
+H = 340 and V = 50000.
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Fitting</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>We estimate the parameters \(\beta_{VH}\), \(\beta_H\) and \(1/\zeta_2\)
+from year 2008 prevalence data of stage I, stage II and
+approximate vector prevalence. We also estimate the same
+parameters to access the effectiveness of control strategies
+using data from 2010, 2012 and 2013.
+</li>
+<li>For the model run till 2008, the treatment parameters are \(P_1 =
+     0\) and \(P_2 = 1\).
+</li>
+<li>After 2008, we set \(1/\zeta_2 = 1/\zeta_1 = 1\) year and  estimate
+\(P_1\) by running model further for one year combined with 2010
+data.
+</li>
+<li>After 2010, we run model to another 2 years, and estimate the
+vector-control parameters using data from 2012 and 2013.
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Likelihood</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>We assume beta distribution for stage I, II patients as well as
+vector prevalence. So, we get the form: <br  />
+      L = &beta;(a,5,4307) &beta;(b,7,4307) &beta;(c,10,1634)  <br  />
+     where a,b and c are stage I, stage II and vector prevalence from
+model output. Other parameters are from the 2008 data.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Notes <a id="Notes" name="Notes"></a></h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Modeling population changes of tsetse:
+<ul class="org-ul">
+<li><i>Birth and death models:</i> <br  />
+      In <a href="https://paperpile.com/shared/WLNoD5">Rogers (1990)</a> and <a href="https://paperpile.com/shared/GNiyWv">Rogers et al. (1994)</a>, they estimated birth
+rates from ambient temperatures and overall density-independent
+mortalities from observed changes in the population. The
+important result of this approach was that it was always found
+essential, for population stability, to include
+density-dependent mortality in the model. <br  />
+      <a href="https://paperpile.com/shared/6BUQur">Hargrove &amp; Williams (1998)</a> modeled adult tsetse mortality to be
+a linear function of maximum temperature whose coefficients were
+estimated by the optimized simulation procedure. Results from
+this study supports indications from other work of the
+overriding importance of temperature in controlling the
+density-independent growth rates of tsetse populations.
+</li>
+<li><i>Models including migration:</i> <br  />
+      <a href="https://paperpile.com/shared/02gCWq">Williams et al. (1992)</a> assumed diffusive movement and logistic growth,
+making no assumption about the mode of operation of the
+density-dependent processes, except that they applied only to
+the birth and death processes, not to dispersal rates. In simple
+terms, it was assumed that each population has a characteristic
+carrying capacity and that the growth rate slows as this level
+is approached. This approach has been used by <a href="https://paperpile.com/shared/e6UYRN">Hargrove (2000)</a> to
+model the re-invasion of areas cleared of tsetse and by <br  />
+      <a href="https://paperpile.com/shared/TJaTuk">Hargrove et al. (2000)</a> to model the use of insecticide-treated
+livestock as a method of tsetse control. It could be used for
+modeling observed changes in natural tsetse population, both
+natural and as a consequence of human intervention.
+</li>
+</ul>
+</li>
+
+<li>Do animals recover from AAT naturally ? or with treatment ? What
+does <i>T.b.gambiense</i> do to animals ?
+</li>
+
+<li>In the human model equations, I added the rate by multiplying the
+coverage with a treatment rate (1/duration of treatment). *Katie
+suggested that since treatment occurs in a clinic (isolated
+environment) so it is more reasonable to have it as rate of
+seeking treatment.*
+<b>Need to fix it.</b>
+</li>
+
+<li>Asymptomatic HAT cases in Humans: <br  />
+    I found some information from <a href="https://paperpile.com/shared/MH5qHg">Checchi et al. 2008</a>.
+It is a commonly held assumption that HAT always progresses to
+stage 2, and is always fatal if untreated. However, the empirical
+evidence to support this assumption is limited and at least
+theoretically four "trypano=tolerant" alternative outcomes are
+possible:
+<ol class="org-ol">
+<li>Early (within weeks/months) spontaneous resolution of stage I;
+</li>
+<li>Chronic, asymptomatic, or mildly symptomatic carriage in stage
+I without progressing to stage II;
+</li>
+<li>Progression to stage II followed by early spontaneous
+resolution;
+</li>
+<li>Chronic, asymptomatic, or mildly symptomatic carriage in stage
+II <br  />
+</li>
+</ol>
+<p>
+Numerous hypotheses have been advanced to explain the persistence
+ of HAT at low prevalence, despite years of case detection:
+</p>
+<ol class="org-ol">
+<li>Constant reseeding with infections from outside the focus;
+</li>
+<li>The role of putative animal reservoirsl
+</li>
+<li>Existence of chronic, asymptomatic carriers, or cases of long
+infection, which maintain low-level transmission, and once
+control is relaxed, may lead to new outbreak. <br  />
+</li>
+</ol>
+<p>
+Note:
+</p>
+<ul class="org-ul">
+<li>There was this famous "FEO" case of a Togolese female who
+remained parasitaemic and healthy over 23 years of follow-up,
+despite repeated treatment courses. The strain was
+morphologically consistent with <i>T.b.gambiense</i>, but induced more
+chronic infections in animals, and may have been non-gambiense.
+</li>
+<li>Reports of spontaneous infection clearance are rare.
+<a href="https://paperpile.com/shared/jBoJoO">Harding and Hutchinson 1948</a> reported that 9 out of 75 Sierra
+Leonean asymptomatic parasite-positive cases at baseline no
+longer showed parasites in weekly tests over the next 2
+months. In this community (Fuero), no significant mortality
+attributable to HAT was noted in spite of infection attach rates
+&gt; 25% over 3 years. The authors speculated that a novel strain
+could have been responsible for the atypical outbreak in Fuero.
+</li>
+<li><a href="https://scholar.google.com/scholar_lookup?title=Quelques+reflexions+sur+la+disparition+spontanee+des+trypanosomes+chez+trois+europeens+reconnus+porteurs+des+trypanosomes&author=Dyleff&publication_year=1932">Dyleff 1932</a> reported that 2 Europeans returning from French Congo, who were
+positive for HAT at an initial test, subsequently tested
+negative in all further tests in various laboratories.
+</li>
+<li><a href="https://scholar.google.com/scholar?hl=en&q=Course%252C+prognosis+and+classification+of+human+trypanosomiasis&btnG=&as_sdt=1%252C7&as_sdtp=">Barlovatz 1933</a>  described a patient from the Belgian Congo who refused
+treatment. Three years and 3 months later, various tests,
+including inoculation of six Guinea pigs with his blood, were
+negative.
+</li>
+<li><a href="https://paperpile.com/shared/fcylov">Cooke et al. 1937</a> reported on an Englishman returning from Nigeria and Ghana who,
+upon post-repatriation screening, was found to be infected but
+mistakenly discharged without treatment; 6 months later no
+trypanosomes were found in blood films or upo animal
+inoculation. The patient was nonetheless treated as a
+precaution.
+</li>
+</ul>
+<p>
+Does human trpano-tolerance exist ?
+</p>
+<ol class="org-ol">
+<li>The majority of untreated gambiense HAT infections progress to
+death.
+</li>
+<li>There is some evidence that patients can spontaneously recover
+from stage I HAT infection. However, all such reports are from
+West Africa, and may in fact involve different strain.
+</li>
+<li>There is no evidence that chronic carriage exists, although it
+is biologically plausible. It is extremely difficult to study
+this outcome given current diagnostic sensitivity and the
+ethical requirement to treat all detected infections.
+</li>
+<li>If spontaneous cure or chronic do occur in stage I, they
+probably constitute a minority of infections.
+</li>
+<li>There is no evidence for spontaneous cure from stage II.
+</li>
+<li>Infections either progress to stage II within a few years, or
+not at all (as suggested by the absence of reports of very long
+stage I infection in patients who have been away from
+HAT-endemic areas for a known period).
+</li>
+<li>Duration of infection beyond 6-7 years are extremely rare.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Things to do</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> <span class="todo TODO">TODO</span> Run the model to equilibrium and afterwards.</h3>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> <span class="todo TODO">TODO</span> Estimate the transmission parameters and control effectiveness.</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Road sure doesn't seem to be easy
+and there is always sometime standing in the way
+sometimes its even you yourself
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Abhishek Pandey</p>
+<p class="date">Created: 2015-10-27 Tue 15:24</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.0.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

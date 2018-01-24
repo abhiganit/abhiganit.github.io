@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-11-30 Mon 16:18 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>RSV</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Abhishek Pandey" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">RSV</h1>
+
+
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Analysis requests</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+We are going to perform cost-effectiveness of RSV vaccination in the
+elderly  by performing following analysis:
+</p>
+<ul class="org-ul">
+<li><p>
+Target Population: 65+
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Basecase</th>
+<th scope="col" class="org-left">Analysis 1</th>
+<th scope="col" class="org-left">Analysis 2</th>
+<th scope="col" class="org-left">Analysis 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Dose frequency</td>
+<td class="org-left">Every year</td>
+<td class="org-left">Every 5 years</td>
+<td class="org-left">Every 2 years</td>
+<td class="org-left">Every year</td>
+</tr>
+
+<tr>
+<td class="org-left">Vaccine efficacy</td>
+<td class="org-left">60%</td>
+<td class="org-left">85%</td>
+<td class="org-left">60%</td>
+<td class="org-left">45%</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+
+<p>
+We do analysis for above for following settings:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Model</td>
+<td class="org-left">Dynamic</td>
+<td class="org-right">Static</td>
+</tr>
+
+<tr>
+<td class="org-left">Viral load reduction</td>
+<td class="org-left">None</td>
+<td class="org-right">50%</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><p>
+Target Population: 65+ with underlying cardiopulmonary disease
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Basecase</th>
+<th scope="col" class="org-left">Analysis 1</th>
+<th scope="col" class="org-left">Analysis 2</th>
+<th scope="col" class="org-left">Analysis 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Dose frequency</td>
+<td class="org-left">Every year</td>
+<td class="org-left">Every 5 years</td>
+<td class="org-left">Every 2 years</td>
+<td class="org-left">Every year</td>
+</tr>
+
+<tr>
+<td class="org-left">Vaccine efficacy</td>
+<td class="org-left">60%</td>
+<td class="org-left">85%</td>
+<td class="org-left">60%</td>
+<td class="org-left">45%</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+We do analysis for above for following settings:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Model</td>
+<td class="org-left">-</td>
+<td class="org-right">Static</td>
+</tr>
+
+<tr>
+<td class="org-left">Viral load reduction</td>
+<td class="org-left">None</td>
+<td class="org-right">50%</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">What we need for analysis ?</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<ul class="org-ul">
+<li><b>Discount rates:</b> I have assumed it to be 2% for now. What should
+I use ? <i>Check out Eunha Shim's paper to see what they used</i></li>
+
+<li><b>Hospitalization:</b> How many people get hospitalized due to RSV
+each year? How to get it model/data ?
+/</li>
+<li><b>RSV deaths:</b> Same problem as Hospitalization.</li>
+<li><b>Outpatient Visits:</b> Same problem as Hospitalization.</li>
+<li><b>Emergency Visits:</b> Same problem as Hospitalization.</li>
+<li><b>Life Expectancy of 65+:</b> For now, I am using 17.1 from <a href="https://paperpile.com/shared/heC27c">Gessner
+2000</a>. Get a weighted average for 65+ people.</li>
+
+<li><b>Utilities per measures:</b> For now, I am using some values from <a href="https://paperpile.com/shared/heC27c">Gessner 2000</a>.</li>
+<li><b>Duration for each measures:</b> For now, I am using some assumed
+values. Need to find better estimates.</li>
+<li><b>Case reduction and reduction in outcome measures:</b> How to connect
+the reduction in cases to reduction in hospitalizations, deaths,
+etc.</li>
+<li><b>Costs:</b> Finding costs for the various measures.</li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">Literature</h3>
+<div class="outline-text-3" id="text-orgheadline11">
+</div><div id="outline-container-orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><a href="https://paperpile.com/shared/IdsMcu">The cost-effectiveness of a hypothetical respiratory syncytial virus vaccine in the elderly (Gessner 2000 - Vaccine)</a></h4>
+<div class="outline-text-4" id="text-orgheadline3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Average life expectancy of  65-year-old, in years</td>
+<td class="org-right">17.4</td>
+</tr>
+
+<tr>
+<td class="org-left">Length of RSV hospitalization, in days</td>
+<td class="org-right">14</td>
+</tr>
+
+<tr>
+<td class="org-left">Length of RSV upper respiratory infection, in days</td>
+<td class="org-right">6.6</td>
+</tr>
+
+<tr>
+<td class="org-left">Length of hospitalization of COPD</td>
+<td class="org-right">5.7</td>
+</tr>
+
+<tr>
+<td class="org-left">Population-based RSV ARI incidence estimate, per 100,000 per year</td>
+<td class="org-right">13,000</td>
+</tr>
+
+<tr>
+<td class="org-left">Proportion of persons with RSV ARI who visit a physician</td>
+<td class="org-right">0.45</td>
+</tr>
+
+<tr>
+<td class="org-left">Incidence of hospitalizations for all pneumonia per 100,000 per year</td>
+<td class="org-right">1100</td>
+</tr>
+
+<tr>
+<td class="org-left">Proportion of pneumonia hospitalizations due to RSV</td>
+<td class="org-right">0.040</td>
+</tr>
+
+<tr>
+<td class="org-left">Proportion of hospitalized persons with RSV ARI who die</td>
+<td class="org-right">0.11</td>
+</tr>
+
+<tr>
+<td class="org-left">Incidence of hospitalization for COPD per 100,000 per year</td>
+<td class="org-right">0.0095</td>
+</tr>
+
+<tr>
+<td class="org-left">Incidence of death due to COPD per 100,000 per year</td>
+<td class="org-right">0.0013</td>
+</tr>
+
+<tr>
+<td class="org-left">Baseline health-related quality of life for 65 years old</td>
+<td class="org-right">0.76</td>
+</tr>
+
+<tr>
+<td class="org-left">Outpatient illness utility</td>
+<td class="org-right">0.76</td>
+</tr>
+
+<tr>
+<td class="org-left">Nursing home utility</td>
+<td class="org-right">0.46</td>
+</tr>
+
+<tr>
+<td class="org-left">Hospitalization</td>
+<td class="org-right">0.35</td>
+</tr>
+
+<tr>
+<td class="org-left">Physician Outpatient visit cost</td>
+<td class="org-right">145 (82,245)</td>
+</tr>
+
+<tr>
+<td class="org-left">Hospitalization for RSV pneumonia</td>
+<td class="org-right">7567 (4433,10700)</td>
+</tr>
+
+<tr>
+<td class="org-left">Hospitalization for COPD</td>
+<td class="org-right">4022</td>
+</tr>
+
+<tr>
+<td class="org-left">Yearly nursing home costs</td>
+<td class="org-right">34912</td>
+</tr>
+
+<tr>
+<td class="org-left">Average future yearly medical costs of persons 65-74</td>
+<td class="org-right">5586</td>
+</tr>
+
+<tr>
+<td class="org-left">Average future yearly medical costs of persons 75-82</td>
+<td class="org-right">8097</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>They assumed that vaccine effectiveness to be 80% against
+hospitalization and death and 50% against upper respiratory
+infection (similar to influenza vaccine effectiveness).</li>
+<li>They discounted nursing home admissions and deaths following
+RSV-related lower respiratory infection, and nursing home and
+future medical costs at 3% for base and best case and at 5% for
+the worst case scenario.</li>
+<li>They considered two scenarios:
+<ol class="org-ol">
+<li>Without a 10% vaccine effectiveness against COPD,</li>
+<li>With a 10% vaccine effectiveness against COPD</li>
+</ol></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><a href="https://paperpile.com/shared/Km8FUr">Respiratory syncytial virus infection in older persons (Falsey 1998 - Vaccine)</a></h4>
+<div class="outline-text-4" id="text-orgheadline4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Rates of RSV pneumonia</td>
+<td class="org-right">5-67%</td>
+</tr>
+
+<tr>
+<td class="org-left">Rates of RSV deaths</td>
+<td class="org-right">0-20%</td>
+</tr>
+
+<tr>
+<td class="org-left">RSV associated hospitalization length in days</td>
+<td class="org-right">14</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><a href="https://paperpile.com/shared/dhwZ95">Respiratory Syncytial Virus and Influenza A Infections in the Hospitalized Elderly (Falsey et al. 1995 - J.Infect.Dis.)</a></h4>
+<div class="outline-text-4" id="text-orgheadline5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">RSV related death rates</td>
+<td class="org-right">10%</td>
+</tr>
+
+<tr>
+<td class="org-left">Length of hospitalization stay, in days</td>
+<td class="org-right">16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><a href="https://paperpile.com/shared/O4vO9r">Mortality Associated With Influenza and Respiratory Syncytial Virus in United States (Thompson et al. 2003 - JAMA)</a></h4>
+<div class="outline-text-4" id="text-orgheadline6">
+<ul class="org-ul">
+<li>This paper has information for elderly people at finer scales, a
+lot of it is about influenza related illness (worth a look, if
+required).</li>
+<li>78% of RSV-associated underlying respiratory and circulatory
+deaths occurred among persons age 65 years or older.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><a href="https://paperpile.com/shared/O8viIf">Respiratory Syncytial Virus Infection in Elderly and High-Risk Adults (Falsey et al. 2005 - N.Engl.J.Med.)</a></h4>
+<div class="outline-text-4" id="text-orgheadline7">
+<ul class="org-ul">
+<li>Among healthy elderly patients, influenza A infection generated
+a greater percentage of office visits/outpatient visits than did
+RSV infection (42% vs 17%)</li>
+<li>The total number of health care visits (office visits, emergency
+room visits and hospitalizations) was similar for the two
+viruses.</li>
+<li>Overall, RSV infection accounted for 10.6% of hospitalization
+for pneumonia, 11.4% for COPD, 5.4% for congestive heart failure
+and 7.2% for ashthma.</li>
+<li>Combining data for no of discharges from U.S. hospitals of adults
+65+ for the diagnose of pneumonia, COPD, congestive heart
+failure and asthma from National Center for Health Statistics of
+the CDC, in 1999 with their rates, they found that RSV infection
+would account for approximately <b>177,525</b> admissions each
+year.</li>
+<li>Also, based on the death rate for hospitalized patients with RSV
+infection (8%), <b>14,000</b> annual deaths would be predicted.</li>
+<li>18% of outpatient/office visits made by elderly adults for
+respiratory illness during winter were RSV-related.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><a href="https://paperpile.com/shared/eIG4oc">RSV vaccine in development: Assessing the potential cost-effectiveness in the Dutch elderly population (Meijboom et al. 2013 - Vaccine)</a></h4>
+<div class="outline-text-4" id="text-orgheadline8">
+<ul class="org-ul">
+<li>They have life expectancies for High and low risk individuals in
+age-groups (60-64,65-74,75-84,85+). High risk population was
+categorized based on International Classification of Primary
+Care (ICPC).</li>
+<li>They have utilities of 0.46 for GP visit and 0.35 for
+hospitalization. Moreover, they assume that patients experience
+the utility for 1 week in case of GP visit and 3 weeks when they
+are hospitalized. (Is this right ?).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><a href="https://paperpile.com/shared/N6WTUW">Respiratory Syncytial Virus Infection in Elderly Adults (Falsey and Walsh 2005 - Drugs Aging)</a></h4>
+<div class="outline-text-4" id="text-orgheadline9">
+<p>
+Not any different information than others.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><a href="https://paperpile.com/shared/mgu6Nr">Respiratory Syncytial Virus Pneumonia among the Elderly: An Assessment of Disease Burden Han et al. 1999 - J.Infect.Dis.</a></h4>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12">Parameters</h2>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13">With Dan</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Abhishek Pandey</p>
+<p class="date">Created: 2015-11-30 Mon 16:18</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

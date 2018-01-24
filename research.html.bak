@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <!-- Website template by freewebsitetemplates.com -->
+    <title>Abhishek Pandey</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <h1><a href="index.html">Abhishek&nbsp; Pandey<br>
+          </a></h1>
+      </div>
+      <div><a href="index.html"> <span></span> </a>
+        <div>
+          <ul>
+            <a href="index.html"> </a>
+            <li><a href="index.html"> </a><a href="index.html">Home</a> </li>
+            <li class="current"> <a href="research.html">Research</a> </li>
+            <li> <a href="contact.html">Contact</a> </li>
+            <li> <a target="_blank" href="Abhishek_CV.pdf">Vita</a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="body">
+      <div>
+        <div>
+          <div class="content">
+            <h2>Research <br>
+            </h2>
+            <div>
+              <h3><span style="font-style: italic;">Research Interest</span>s<br>
+              </h3>
+              <p>I am interested in mathematical modeling and evolution of
+                infectious diseases, computational dynamical systems, Bayesian
+                MCMC and optimization.&nbsp; My research goals include advancing
+                the understanding of infectious diseases and helping public
+                health policy makers through my work.</p>
+              <h3><span style="font-style: italic;">Current Projects</span></h3>
+              <p>1. Strategies for containing Ebola virus disease in West
+                Africa. <br>
+                2. Evaluating feasibility of using pharmaceutical interventions
+                to curtail Ebola outbreak.<br>
+                3. Modeling Human African Trypanosomaisis (HAT) and accessing
+                the current control measures.<br>
+                4. Impacts of introducing dengue vaccine and accessing its
+                effects. </p>
+              <h3><span style="font-style: italic;">Selected Publications</span><br>
+              </h3>
+              <p><span style="font-weight: bold;"></span><span style="font-style: italic;"></span><span
+                  style="font-weight: bold;"></span><span style="text-decoration: underline;"></span>
+                <span style="color: black;"></span> <span style="color: black;"></span>
+                <b>A. Pandey</b>, A. Mubayi, J. Medlock. <a target="_blank" href="http://www.sciencedirect.com/science/article/pii/S0025556413002435">Comparing
+vector-host
+                  and SIR models for dengue transmission</a>.<br>
+                <b>A. Pandey</b>, J. Medlock. <a target="_blank" href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=9318864&amp;fileId=S0950268814001939">The
+                  introduction of dengue vaccine may temporarily cause large
+                  spikes in prevalence</a>. </p>
+              <h3><span style="font-style: italic;">Selected Talks</span><br>
+              </h3>
+              <p> <a target="_blank" href="http://www.youtube.com/watch?v=HkyYD24dYLs">Transient
+                  Spikes after Vaccine Introduction</a>. Math Club, Clemson
+                University (Oct
+                2013)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://client.blueskybroadcast.com/SIAM14/AN/SIAM_AN14_MS106_2/launch_html5.asp?vAD=MTAxMTk3&amp;vUS=LTk5&amp;vMP=MA==&amp;vHT=bGl2ZS5ibHVlc2t5YnJvYWRjYXN0LmNvbS8=&amp;vPing=VHJ1ZQ==&amp;vPICQ=RmFsc2U=&amp;V=185217062124069133047244070163176094140092189037186017001153063199011116211094091199255033079066">Comparing
+                  vector-host and SIR models for dengue transmission in Thailand
+                  and Variability in the estimates of R0 among studies</a>. SIAM
+                Annual Meeting, Chicago (July 2014)<br>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

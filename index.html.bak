@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <!-- Website template by Abhishek Pandey-->
+    <title>Abhishek Pandey</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <h1><a href="index.html">Abhishek&nbsp; Pandey<span style="font-family: monospace;">d</span>
+          </a></h1>
+      </div>
+      <div>
+        <div>
+          <ul>
+            <li class="current"> <a href="index.html">Home</a> </li>
+            <li> <a href="research.html">Research</a> </li>
+            <li> <a href="contact.html">Contact</a> </li>
+            <li> <a href="https://bytebucket.org/abhiganit/abhiganit.bitbucket.org/raw/5b826773358b0109e0273b657f88f012cba2c893/Abhishek_CV.pdf?token=3120411102b845d7926dcf6cbd1d5435b399f286">Vita</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="body">
+      <div>
+        <div>
+          <h2>About Me<br>
+          </h2>
+          <img style="width: 755px; height: 360px;" src="images/IMG_0751.JPG" alt="Smiley face"><br>
+          <br>
+          <div>
+            <p><br>
+            </p>
+            <p><span>Postdoctoral Associate, Yale University</span> </p>
+            <p> Center for Infectious Disease Modeling and Analysis,<br>
+            </p>
+            Yale School of Public Health, <br>
+            <p>P.I. : Dr. Alison Galvani </p>
+            <p><span><br>
+              </span></p>
+            <p><span><br>
+              </span></p>
+            <p><span>PhD, Clemson University (2014)</span> Department of
+              Mathematical Sciences,<br>
+            </p>
+            Advisor: Dr. Jan Medlock <br>
+            <p>Thesis:&nbsp; <a href="thesis.pdf">Modeling Dengue Transmission
+                and Vaccination</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span>MS, Clemson University (2011)</span> Department of
+              Mathematical Sciences,<br>
+            </p>
+            Advisor: Dr. Jan Medlock<br>
+            <p>Project: <a href="abhishekMSproject.pdf">Modeling and
+                Optimization of the allocation of a new dengue vaccine</a><br>
+              <br>
+            </p>
+            <p><span><br>
+                M.Sc, Indian Institute of Technology Roorkee (2008)</span>
+              Department of Applied Mathematics,<br>
+            </p>
+            Advisor: Dr. Sugata&nbsp; Gangopadhyay <br>
+            <p>Dissertation: Stability analysis of LFSR based shift-register<br>
+              <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

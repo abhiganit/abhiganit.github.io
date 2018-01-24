@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Ebola Vaccination in Future Outbreaks</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Ebola Vaccination in Future Outbreaks</h1>
+
+
+
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+To inform the requirements for stockpiling, we evaluate the
+relationship between timeliness of vaccination implementation and
+number of doses necessary to extinguish an outbreak
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Assumptions</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Network Construction</h3>
+<div class="outline-text-3" id="text-2-1">
+</div><div id="outline-container-sec-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Population</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>30 communities
+</li>
+<li>Avg. no. of households/community: 125 <a href="https://paperpile.com/shared/Wm7UNb">(Plange-Rhule et al. 2012)</a>
+</li>
+<li>Avg. household size: 6 <a href="https://paperpile.com/shared/7AqeWz">(Ferraro et al. 2014)</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">Generating Network</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>For each community, randomly sample the number of households in
+the community from a Poisson distribution.
+</li>
+<li>For each household, randomly sample the number of people in
+household from a Poisson distribution.  Therefore, we produce a
+random network with an average of N individuals.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3">Mixing</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>Assumed homogeneous mixing in each household. <br  />
+      Everyone in the household is connected to each other.
+</li>
+<li>For degree distribution outside the household, we use <br  />
+<ul class="org-ul">
+<li>the degree distribution from empirical data from the
+Ministry of Health in Liberia or
+</li>
+<li>a discrete exponential degree distribution (May be
+supplementary analysis).
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-1-4" class="outline-4">
+<h4 id="sec-2-1-4">Mixing</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>We randomly assign contacts for each individual from the
+population. A contact outside the household can either be
+<ul class="org-ul">
+<li><b>in the individual's community</b> (prob. p<sub>C</sub> = 0.76 is median
+probability of the frequency of contacts within each zone
+from the empirical contact tracing data from MoH, Liberia)
+</li>
+<li>or <b>outsize the individual's community</b> (1-p<sub>C</sub>)
+</li>
+</ul>
+</li>
+
+<li>Clustering Coefficient <br  />
+      The clustering coefficient (&varphi;) is calculated as
+\begin{equation}
+\varphi = \frac{\text{no. of triangles}}{\text{no. of triples}} =
+\frac{\text{trace}(G^3)}{||G^2||-\text{trace}(G^2)}
+\end{equation}
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">Epidemiology</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Model</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+We used an SEIR type model to simulate the spread of Ebola. The
+entire population was assumed to be susceptible to infection as
+there is no or limited information regarding fraction of
+population immune prior to an outbreak. In addition, the initial
+assumption regarding the spatial allocation of the immune
+individuals can influence the disease spread. We run simulations
+on a daily scale till there are no latently infected or infectious
+individuals remaining.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Parameters</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Par.</td>
+<td class="left">Definition</td>
+<td class="left">Value/Distribution</td>
+<td class="left">Reference</td>
+<td class="left">Comment</td>
+</tr>
+
+<tr>
+<td class="left">\(q_H\)</td>
+<td class="left">Prob. of infection of household contacts from an infected individual/day</td>
+<td class="left">1-(1-0.2)<sup>1/8</sup></td>
+<td class="left"><a href="https://paperpile.com/shared/HmeZaH">Merler et al. 2015</a></td>
+<td class="left">The secondary attack rate within the household ~ 20% (7-35%) and avg. duration of infectiousness is 8 days</td>
+</tr>
+
+<tr>
+<td class="left">\(q_C\)</td>
+<td class="left">Prob. of infection of community contacts from an infected individual/day</td>
+<td class="left">1-(1-0.05)<sup>1/8</sup></td>
+<td class="left"><a href="https://paperpile.com/shared/FTV7zu">Bull of World Health Ogran. 1978</a></td>
+<td class="left">The secondary attack rate within the household ~ 5% and avg. duration of infectiousness is 8 days</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3">Parameters</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Par.</td>
+<td class="left">Definition</td>
+<td class="left">Value/Distribution</td>
+<td class="left">Reference</td>
+<td class="left">Comment</td>
+</tr>
+
+<tr>
+<td class="left">&sigma;<sub>i</sub></td>
+<td class="left">Duration of latent stage of infection</td>
+<td class="left">~NB(4.285,0.693)</td>
+<td class="left"><a href="https://paperpile.com/shared/jNHR1s">WHO Ebola reponse team. 2014</a></td>
+<td class="left">Parameters obtained by fitting gamma dist. of the incubation period from the 2014 Ebola outbreak. Neg. bin. was chosen as it is discrete analogue of the gamma dist.</td>
+</tr>
+
+<tr>
+<td class="left">&delta;<sub>i</sub></td>
+<td class="left">Duration of infectious period</td>
+<td class="left">~NB(10,0.015)+5</td>
+<td class="left"><a href="https://paperpile.com/shared/9zfrSs">Yamin et. al. 2015</a></td>
+<td class="left">Parameters obtained by fitting to triangular dist. with mode of 8 days and range from 5-14 days. Neg. bin. was chosen to assign a non-zero prob. to the min. value of the range.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">Contact tracing and isolation</h3>
+<div class="outline-text-3" id="text-2-3">
+</div><div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1">Assumptions</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>&epsilon;<sub>C</sub> is defined as the probability of finding a single contact per day.
+</li>
+<li>We assume that the daily contact tracing efficacy is 95%.
+</li>
+<li>Initiation of contact tracing begins on a given day with
+probability:
+\begin{equation}
+\pi_C = 1 - \frac{1}{1+(\frac{C}{C_{50}})^m},
+\end{equation}
+<p>
+where C is the cumulative number of confirmed cases (case heads
+to hospital and confirmed through laboratory testing) on day t,
+C<sub>50</sub> is the number of confirmed cases required such that there
+is 50% chance that the intervention will start, and m is a shape
+parameter for the sigmoidal function.
+</p>
+</li>
+<li>We assumed that the intervention will start, if it has not
+already, once there have been more than 50 confirmed cases.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-2" class="outline-4">
+<h4 id="sec-2-3-2">Assumptions</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>No data to suggest appropriate values of C<sub>50</sub> and m. We are
+using C<sub>50</sub> = 10 and m = 3.
+
+
+<div id="fig:ModelFits" class="figure">
+<p><img src="ContactTracing.png" alt="ContactTracing.png" align="center" height="600px" width="600px" />
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-3" class="outline-4">
+<h4 id="sec-2-3-3">Assumptions</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>We assume that once a case is "isolated" there is
+<ul class="org-ul">
+<li>100% reduction in community transmissibility.
+</li>
+<li>X% reduction in household transmissibility. <br  />
+</li>
+</ul>
+<p>
+<b>NOTE:</b> We are implicitly trying to incorporate the effects of an
+intensive care unit (ICU), which is not 100% effective in
+reducing transmission among close contacts.
+</p>
+</li>
+<li>We did not include ICU explicitly for simplicity.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.0.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+#+Title: Human African Trypanosomiasis 
+#+Author: Abhishek Pandey
+#+Email: abhishek.pandey@yale.edu
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: toc:1
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: cube
+#+REVEAL_THEME: moon
+#+REVEAL_HLEVEL: 2
+
+
+* Model
+
+** Model Diagram
+
+
+file:ModelDiagram.png
+
+** Model Compartments 
+| Compartment | Definitions                       |
+| $S$         | Susceptible individuals           |
+| $L$         | Latently infected individuals     |
+| $I$         | Infectious individuals            |
+| $R_t$       | Treated individuals               |
+| $R$         | Completely recovered individuals  |
+** Model Parameters
+Here is model parameter definitions and their corresponding values that we are using
+from literature. We estimate three parameters: transmission risk
+$\beta$, complete recovery rate $\eta$ and relapse rate $\sigma$. We
+also estimated three initial conditions $S(0)$, $L(0)$ and $R_{t}(0)$.
+
+| Parameters | Definitions                                                              |   Values | Reference |
+| $\Delta$   | Recruitment rate in the population                                       |   0.0008 |           |
+| $\mu$      | Per capita mortality rate                                                | 0.000043 |           |
+| $\alpha$   | Per capita rate related to asymptomatic period in general population     |  0.00975 |           |
+| $p$        | Proportion of symptomatic individuals                                    |   0.9967 |           |
+| $\gamma$   | Per capita recovery rate of symptoatic individuals in general population |   0.0087 |           |
+| $\delta$   | Per capita disease mortality rate of symptomatic individuals             |   0.0067 |           |
+| $N(0)$     | Initial total population                                                 | 99000000 | Data      |
+| $I(0)$     | Initial infected population                                              |      388 | Data      |
+| $D(0)$     | Disease induced death compartment                                        |        2 | Data      |
+
+
+
+
+* Fitting
+
+I fitted the parameters transmission risk $\beta$, complete recovery
+rate $\nu$ and relapse rate $\sigma$ as well as three initial
+conditions using 'fminsearchbnd' in Matlab.  For rest of the
+parameters and initial conditions, I either use estimates from
+literature or use an assumed value [[Model Parameters][See Here]].
+
+I ran the estimation routine starting from $32$ random initial guesses for
+the parameters between their lower and upper bound. I finally save the
+parameter estimates that maximizes the likelihood most as best
+parameter estimates. 
+
+** Parameter Estimates
+*Model Parameters*
+| Parameters | Definition                        | Bounds   | Estimate     | Range |
+| $\beta$    | Transmission risk ($y^{-1}$)      | [0, 10]  | $0.2369$     | [0.1553,1.6598] |
+| $\sigma$   | Relapse rate ($y^{-1}$)           | [0.5, 8] | $0.5528$     | [0.5000,6.9530] |
+| $\eta$     | Complete recovery rate ($y^{-1}$) | [0.2, 6] | $0.3011$     | [0.2000,5.9968] |
+
+*Initial Conditions*
+
+| Initial State | Definition                               | Estimate  | Range |
+| $S(0)$        | Initial susceptible population           |  98854000 | [96063000,98957000] |
+| $L(0)$        | Initial latent population                |    113360 | [35864,191400] |
+| $R_{t}(0)$    | Initial temporarily recovered population |       1029 |    [0,1200]    |
+
+
+$R(0)$ was calculated as $N(0)-S(0)-L(0)-I(0)-D(0)-R_t(0)$.
+
+** Model Fit
+
+#+ATTR_HTML: :width 500px
+#+ATTR_HTML: :height 500px 
+file:Modelfit.png
+
+
+
+** Range for estimates
+To account for observational errors in the reported data and to find a
+range for parameter estimates, we generated bootstrap range for each
+parameter estimate by generating $512$ sets of realizations of the
+best-fit curve.
+
+#+ATTR_HTML: :width 600px 
+#+ATTR_HTML: :height 500px 
+file:ParamDist.png
