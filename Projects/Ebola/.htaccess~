@@ -1,6 +1,0 @@
-AuthName "Ebola"
-AuthType Digest file:
-AuthUserFile /etc/httpd/Ebola.passwd
-Require valid-user
-Order allow,deny
-Satisfy any

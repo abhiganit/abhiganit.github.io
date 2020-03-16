@@ -1,0 +1,62 @@
+#+OPTIONS:   H:4 toc:t num:nil
+#+PROPERTY:  padline no
+#+SETUPFILE: bigblow-pirilampo.setup
+#+TITLE: Abhishek Pandey
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+
+* About me
+  #+LABEL: fig:My photo
+  #+ATTR_HTML: :width 200px
+  #+ATTR_HTML: :height 200px
+  #+ATTR_HTML: :align right
+  file:images/abhi4.jpg
+
+I am currently working as an Associate Research Scientist in the
+Center for Infectious Disease Modeling and Analysis at the Yale School
+of Public Health. I grew up in India where I earned my undergraduate
+in BSc(H) in Mathematics from Ramjas College, Delhi University and a
+MSc in applied mathematics from Indian Institute of Technology,
+Roorkee. After moving to United States in Fall 2008, I obtained my
+Ph.D. in mathematics from Department of Mathematics at Clemson
+University.
+
+{{{color(red,My research focus is to develop mathematical models of infectious
+diseases to understand the disease dynamics and evaluate the
+effectiveness and cost-effectiveness of public health interventions.
+My research goals include advancing the understanding of infectious
+diseases and helping public health policy makers through my work.)}}}
+
+** Employment History
+*** Associate Research Scientist, Yale University
+Center for Infectious Disease and Analysis (CIDMA), Yale School of
+Public Health
+*** Postdoctoral Associate, Yale University
+Center for Infectious Disease and Analysis (CIDMA), Yale School of
+Public Health
+ + Mentor: Dr. Alison Galvani
+
+** Education
+*** Ph.D., Modeling infectious diseases, Clemson University
+Department of Mathematical Sciences
+ + Advisor: Dr. Jan Medlock
+ + Thesis: Modeling dengue transmission and vaccination
+
+*** Masters, Modeling infectious diseases,Clemson University,
+Department of Mathematical Sciences
+
+*** MSc, Applied Mathematics, IIT Roorkee
+Department of Mathematics
+
+*** BSc (H), Mathematics, Delhi University
+Ramjas College
+
+* Research
+
+** Ebola
+** Sleeping-sickness
+** Rabies
+** HIV
+
+* Publications
+
+* Contact
