@@ -1,0 +1,136 @@
+:root{
+  --ink:#151515; --red:#E14B31; --yel:#F3C13A; --blu:#3E7CB1;
+  --paper:#FFFFFF; --grey:#6C6C6C; --rule:3px;
+  --display:"Poppins",system-ui,sans-serif;
+  --body:"Lora",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); line-height:1.6; font-size:17px;
+}
+.wrap{max-width:56rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0}
+a{color:var(--ink)}
+
+/* ---------- masthead ---------- */
+.masthead{padding:1.4rem 0 1.1rem;border-bottom:var(--rule) solid var(--ink)}
+.masthead .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sitename{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-0.01em}
+.sitenav{display:flex;gap:1.4rem;font-family:var(--display);font-size:.92rem}
+.sitenav a{text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent}
+.sitenav a:hover,.sitenav a:focus-visible{border-bottom-color:var(--red)}
+
+/* ---------- hero ---------- */
+.hero{padding:3.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1fr 190px;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.1rem,6vw,3.5rem);letter-spacing:-0.02em;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--red);display:block}
+.hero p{margin:1.2rem 0 0;max-width:46ch;font-size:1.08rem}
+.hero svg{width:100%;height:auto;display:block}
+
+/* ---------- section headings ---------- */
+section{padding:3.2rem 0}
+section+section{border-top:var(--rule) solid var(--ink)}
+.shead{margin-bottom:2rem}
+.shead h2{font-size:clamp(1.5rem,4vw,2rem);letter-spacing:-0.015em}
+.shead p{margin:.7rem 0 0;max-width:60ch;color:var(--grey)}
+
+/* ---------- the eight books ---------- */
+.book{
+  display:grid;grid-template-columns:4.5rem 1fr auto;gap:1.4rem;
+  align-items:start;padding:1.5rem 0;border-top:1px solid #D8D8D8;
+}
+.book:first-of-type{border-top:0}
+.num{
+  font-family:var(--display);font-weight:600;font-size:2.4rem;line-height:1;
+  color:var(--ink);position:relative;padding-top:.1rem;
+}
+.num span{display:block;width:2.2rem;height:8px;margin-top:.5rem;background:var(--yel)}
+.book:nth-child(3n+2) .num span{background:var(--red)}
+.book:nth-child(3n+3) .num span{background:var(--blu)}
+.book h3{font-size:1.35rem;letter-spacing:-0.01em}
+.book .q{margin:.35rem 0 0;color:var(--grey);font-style:italic}
+.book .d{margin:.6rem 0 0;max-width:52ch}
+.grabs{display:flex;flex-direction:column;gap:.5rem;min-width:9.5rem}
+.btn{
+  font-family:var(--display);font-size:.86rem;text-decoration:none;
+  border:var(--rule) solid var(--ink);background:var(--paper);color:var(--ink);
+  padding:.5rem .8rem;text-align:center;display:block;
+}
+.btn:hover,.btn:focus-visible{background:var(--yel)}
+.btn.solid{background:var(--red);color:var(--paper);border-color:var(--ink)}
+.btn.solid:hover,.btn.solid:focus-visible{background:var(--ink)}
+
+/* ---------- print instructions ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.cols h3{font-size:1.05rem;margin-bottom:.4rem}
+.cols ul{margin:.2rem 0 1.4rem;padding-left:1.1rem}
+.cols li{margin-bottom:.4rem}
+.fold{border:var(--rule) solid var(--ink);padding:1.2rem;margin-top:.5rem}
+.fold svg{width:100%;height:auto;display:block}
+.fold figcaption{font-size:.88rem;color:var(--grey);margin-top:.7rem}
+
+/* ---------- interactives ---------- */
+.toy{border:var(--rule) solid var(--ink);margin-bottom:2.2rem}
+.toy header{padding:1rem 1.2rem;border-bottom:var(--rule) solid var(--ink)}
+.toy h3{font-size:1.15rem}
+.toy header p{margin:.3rem 0 0;color:var(--grey);font-size:.95rem}
+.toy canvas{display:block;width:100%;height:auto;background:var(--paper)}
+.toy .controls{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.2rem;border-top:var(--rule) solid var(--ink)}
+.toy button{
+  font-family:var(--display);font-size:.88rem;cursor:pointer;
+  border:2px solid var(--ink);background:var(--paper);color:var(--ink);
+  padding:.55rem .9rem;flex:1 1 auto;
+}
+.toy button:hover{background:var(--yel)}
+.toy button.go{background:var(--red);color:var(--paper)}
+.toy button.go:hover{background:var(--ink)}
+.toy button:focus-visible,.btn:focus-visible,.sitenav a:focus-visible{outline:3px solid var(--blu);outline-offset:2px}
+.readout{padding:0 1.2rem 1.1rem;font-size:.98rem;margin:0}
+.readout b{font-family:var(--display);font-weight:600}
+
+footer{border-top:var(--rule) solid var(--ink);padding:2rem 0 3rem;color:var(--grey);font-size:.92rem}
+footer p{margin:0 0 .5rem;max-width:60ch}
+
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero svg{max-width:120px}
+  .book{grid-template-columns:3rem 1fr;gap:1rem}
+  .grabs{grid-column:1 / -1;flex-direction:row;margin-top:.6rem}
+  .grabs .btn{flex:1}
+  .cols{grid-template-columns:1fr;gap:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- wordmark + home ---------- */
+.mark{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.mark svg{width:30px;height:30px;display:block}
+.mark .en{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-0.01em}
+.mark .hi{font-family:var(--display);font-weight:400;font-size:1.05rem;color:var(--grey)}
+
+.bigmark{display:flex;align-items:center;gap:1.4rem;margin-bottom:1.6rem}
+.bigmark svg{width:96px;height:96px;flex:none}
+.bigmark h1{font-size:clamp(2.6rem,9vw,4.2rem);letter-spacing:-0.03em;line-height:.95}
+.bigmark .hi{font-family:var(--display);font-weight:400;color:var(--grey);
+  font-size:clamp(1.3rem,4vw,1.8rem);line-height:1.2;margin-top:.2rem}
+
+.tagline{font-size:1.15rem;max-width:44ch;margin:0 0 .8rem}
+.aside{color:var(--grey);max-width:52ch;margin:0}
+
+.coll{
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+  border:var(--rule) solid var(--ink);padding:1.6rem 1.8rem;text-decoration:none;
+}
+.coll:hover,.coll:focus-visible{background:#FFFBF0}
+.coll h3{font-size:1.5rem;letter-spacing:-0.015em}
+.coll p{margin:.5rem 0 0;max-width:48ch}
+.coll .meta{margin:.7rem 0 0;font-family:var(--display);font-size:.85rem;color:var(--red)}
+.spines{display:flex;gap:5px;align-items:flex-end;flex:none}
+.spines i{display:block;width:11px;border:2px solid var(--ink);background:var(--paper)}
+.later{margin-top:1.6rem;color:var(--grey)}
+@media (max-width:720px){
+  .bigmark{gap:1rem}.bigmark svg{width:64px;height:64px}
+  .coll{grid-template-columns:1fr}.spines{display:none}
+}
