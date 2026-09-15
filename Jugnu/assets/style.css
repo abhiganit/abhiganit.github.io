@@ -129,6 +129,7 @@ footer p{margin:0 0 .5rem;max-width:60ch}
 .coll .meta{margin:.7rem 0 0;font-family:var(--display);font-size:.85rem;color:var(--red)}
 .spines{display:flex;gap:5px;align-items:flex-end;flex:none}
 .spines i{display:block;width:11px;border:2px solid var(--ink);background:var(--paper)}
+.coll + .coll{margin-top:1.2rem}
 .later{margin-top:1.6rem;color:var(--grey)}
 @media (max-width:720px){
   .bigmark{gap:1rem}.bigmark svg{width:64px;height:64px}
