@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maps and the world — a world atlas small children can use | Jugnu</title>
+<meta name="description" content="A free world atlas built for children who cannot read yet. Tap a mountain, a river, a volcano or a country and it tells you what it is, out loud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+/* ---- map-specific, built on the site palette in assets/style.css ---- */
+:root{ --sea:#24536F; --af:#F3C13A; --as:#E14B31; --eu:#3E7CB1;
+       --na:#F8DE95; --sa:#F0A392; --oc:#9DC0D8; --an:#FFFFFF; }
+
+.atlas{border:var(--rule) solid var(--ink);margin-bottom:2.2rem}
+.atlas .bar{display:flex;flex-wrap:wrap;gap:.5rem;padding:.9rem 1rem;border-bottom:var(--rule) solid var(--ink);align-items:center}
+.mbtn{font-family:var(--display);font-size:.86rem;cursor:pointer;display:flex;align-items:center;gap:.4rem;
+  border:2px solid var(--ink);background:var(--paper);color:var(--ink);padding:.45rem .7rem}
+.mbtn svg{width:19px;height:19px;display:block;flex:none}
+.mbtn:hover{background:var(--yel)}
+.mbtn[aria-pressed="true"]{background:var(--red);color:var(--paper)}
+.mbtn[aria-pressed="true"] svg [stroke]{stroke:var(--paper)}
+.mbtn[aria-pressed="true"] svg [fill]:not([fill="none"]){fill:var(--paper)}
+.mbtn:focus-visible,#q:focus-visible,.mtool:focus-visible{outline:3px solid var(--blu);outline-offset:2px}
+
+.seek{position:relative;margin-left:auto;display:flex;gap:.5rem;align-items:center}
+#q{font-family:var(--display);font-size:.9rem;border:2px solid var(--ink);background:var(--paper);
+   padding:.45rem .6rem;width:15rem;color:var(--ink)}
+#res{position:absolute;top:calc(100% + 4px);right:0;width:23rem;max-height:17rem;overflow-y:auto;
+  background:var(--paper);border:var(--rule) solid var(--ink);z-index:20;display:none}
+#res.show{display:block}
+#res button{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid #E2E2E2;
+  background:var(--paper);font-family:var(--body);font-size:.92rem;padding:.55rem .8rem;cursor:pointer;color:var(--ink)}
+#res button:hover,#res button:focus-visible{background:var(--yel)}
+#res b{font-family:var(--display);font-weight:600}
+#res i{font-style:normal;color:var(--grey);font-size:.82rem;display:block}
+
+.mwrap{position:relative;background:var(--sea)}
+#map{display:block;width:100%;height:clamp(420px,66vh,760px);touch-action:none}
+.mtools{position:absolute;right:.8rem;top:.8rem;display:flex;gap:.4rem}
+.mtool{width:2.6rem;height:2.6rem;border:2px solid var(--ink);background:var(--paper);color:var(--ink);
+  font-family:var(--display);font-size:1.15rem;cursor:pointer;padding:0;line-height:1}
+.mtool:hover{background:var(--yel)}
+.mtool[aria-pressed="true"]{background:var(--yel);color:var(--ink)}
+
+#quest{position:absolute;top:.8rem;left:50%;transform:translateX(-50%);max-width:min(30rem,88%);
+  background:var(--red);color:var(--paper);border:var(--rule) solid var(--ink);padding:.6rem 1rem;
+  font-family:var(--display);font-size:1.05rem;text-align:center;display:none}
+#quest.show{display:block}
+#quest em{font-style:normal;display:block;font-size:.76rem;opacity:.9;margin-top:.15rem}
+
+#card{position:absolute;left:.8rem;bottom:.8rem;width:min(24rem,calc(100% - 5.5rem));
+  background:var(--paper);border:var(--rule) solid var(--ink);padding:.9rem 1rem 1rem;display:none}
+#card.show{display:block}
+#card h4{font-family:var(--display);font-weight:600;font-size:1.25rem;margin:0;line-height:1.15}
+#card .hi{font-family:var(--display);color:var(--grey);font-size:.95rem;margin:.15rem 0 0}
+#card p{margin:.45rem 0 0;font-size:.95rem}
+#card .tags{margin-top:.55rem;display:flex;flex-wrap:wrap;gap:.35rem}
+#card .tag{font-family:var(--display);font-size:.74rem;border:2px solid var(--ink);padding:.15rem .45rem}
+#gauge{margin-top:.6rem;height:10px;border:2px solid var(--ink);display:none}
+#gauge i{display:block;height:100%;background:var(--yel)}
+#card .acts{display:flex;gap:.4rem;margin-top:.7rem}
+#card .acts button{flex:1;font-family:var(--display);font-size:.8rem;border:2px solid var(--ink);
+  background:var(--paper);cursor:pointer;padding:.4rem;color:var(--ink)}
+#card .acts button:hover{background:var(--yel)}
+#card .x{position:absolute;top:.4rem;right:.5rem;border:0;background:none;font-size:1.2rem;cursor:pointer;
+  font-family:var(--display);line-height:1;color:var(--grey)}
+
+#note{padding:.7rem 1rem;border-top:var(--rule) solid var(--ink);font-size:.9rem;color:var(--grey);margin:0}
+
+/* map primitives */
+.land{fill:var(--paper);stroke:var(--sea);stroke-width:.9;vector-effect:non-scaling-stroke}
+.land.faded{fill:#EFEAE0}
+.land.pickable{cursor:pointer}
+.state{fill:#FBF4E4;stroke:#A99B7E;stroke-width:.8;vector-effect:non-scaling-stroke;cursor:pointer}
+.riv{fill:none;stroke:var(--blu);stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;cursor:pointer}
+.riv.lake{stroke:#8FB6D3}
+.pin{cursor:pointer}
+.pin text{font-family:'Poppins',sans-serif;font-weight:600;text-anchor:middle;paint-order:stroke;
+  stroke:var(--paper);stroke-width:3.2px;fill:var(--ink);font-size:11px}
+.pin.chosen .ring{display:block}
+.pin .ring{display:none}
+.glabel{font-family:'Poppins',sans-serif;font-weight:600;text-anchor:middle;pointer-events:none;
+  paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:3.4px;fill:var(--ink)}
+.sealabel{fill:#B9D6E6;stroke:none;letter-spacing:.09em;opacity:.9}
+.contlabel{fill:var(--paper);stroke:rgba(0,0,0,.4);stroke-width:4px;letter-spacing:.05em}
+
+@media (max-width:720px){
+  .seek{margin-left:0;width:100%}
+  #q{width:100%}
+  #res{width:100%}
+  #card{width:calc(100% - 1.6rem);left:.8rem}
+  #map{height:clamp(260px,40vh,380px)}
+  .mtools{right:.5rem;top:.5rem}
+}
+@media (prefers-reduced-motion:reduce){#map{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="wrap"><a class="mark" href="../index.html"><svg viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="58" cy="66" r="30" fill="#F3C13A" opacity=".22"/>
+      <circle cx="58" cy="66" r="21" fill="#F3C13A" opacity=".42"/>
+      <g stroke="#151515" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M 42 40 C 20 22, 8 34, 16 46 C 22 55, 36 52, 44 46 Z" fill="#FFFFFF"/>
+        <path d="M 50 34 C 46 10, 62 4, 70 14 C 77 23, 66 34, 56 38 Z" fill="#FFFFFF"/>
+        <circle cx="58" cy="66" r="16" fill="#F3C13A"/>
+        <circle cx="42" cy="44" r="11" fill="#E14B31"/>
+        <path d="M 34 34 L 27 24 M 44 31 L 46 20" fill="none" stroke-width="4"/>
+      </g>
+    </svg><span class="en">Jugnu</span><span class="hi">जुगनू</span></a><nav class="sitenav"><a href="../index.html">All of Jugnu</a><a href="#atlas">The atlas</a><a href="#grownup">For the grown-up</a></nav></div></div>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Everything is<br><em>somewhere.</em></h1>
+      <p>A world atlas for a child who cannot read yet. Turn on one thing at a time —
+         mountains, or rivers, or volcanoes — tap any of it, and the map says out loud
+         what it is and how big.</p>
+    </div>
+    <svg viewBox="0 0 120 210" aria-hidden="true">
+      <g stroke="#151515" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="60" cy="112" r="46" fill="#3E7CB1"/>
+        <path d="M 30 80 q 14 -6 22 4 q 10 12 24 6 q 8 -4 14 2" fill="none" stroke-width="3.5"/>
+        <path d="M 22 112 H 98" fill="none" stroke-width="3.5"/>
+        <path d="M 34 142 q 16 8 30 0 q 14 -8 24 2" fill="none" stroke-width="3.5"/>
+        <path d="M 44 74 C 30 100, 30 126, 46 150" fill="none" stroke-width="3.5"/>
+        <path d="M 76 74 C 90 100, 90 126, 74 150" fill="none" stroke-width="3.5"/>
+        <path d="M 44 96 L 56 78 L 68 96 Z" fill="#F3C13A"/>
+        <circle cx="60" cy="112" r="46" fill="none"/>
+      </g>
+      <g stroke="#151515" stroke-width="2.4" stroke-linecap="round">
+        <path d="M 12 26 H 22 M 17 21 V 31"/><path d="M 96 16 H 104 M 100 12 V 20"/>
+        <path d="M 30 48 H 38 M 34 44 V 52"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<section id="atlas">
+  <div class="wrap">
+    <div class="shead">
+      <h2>The atlas</h2>
+      <p>Pick one layer. Drag to move, scroll or pinch to zoom, tap anything to hear it.
+         More appears as you zoom in — a handful of mountains across the whole world,
+         hundreds once you are down over the Himalaya. The search box finds any of the
+         six hundred peaks, fifteen hundred volcanoes, a thousand rivers and three
+         thousand towns underneath.</p>
+    </div>
+
+    <div class="atlas">
+      <div class="bar" id="bar">
+        <div class="seek">
+          <input id="q" type="search" placeholder="Find a place…" autocomplete="off"
+                 aria-label="Search for a place">
+          <div id="res" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+
+      <div class="mwrap">
+        <svg id="map" viewBox="0 0 2000 1000" preserveAspectRatio="xMidYMid meet" aria-label="World map">
+          <g id="view">
+            <g id="gLand"></g><g id="gStates"></g><g id="gRivers"></g>
+            <g id="gLabels"></g><g id="gPins"></g>
+          </g>
+        </svg>
+
+        <div class="mtools">
+          <button class="mtool" id="tFind" title="Play find-it" aria-pressed="false">?</button>
+          <button class="mtool" id="tSound" title="Sound on or off" aria-pressed="true">♪</button>
+          <button class="mtool" id="tIn" title="Zoom in">+</button>
+          <button class="mtool" id="tOut" title="Zoom out">−</button>
+          <button class="mtool" id="tHome" title="Whole world">⌂</button>
+        </div>
+
+        <div id="quest" role="status" aria-live="polite"></div>
+
+        <div id="card" role="dialog" aria-label="About this place">
+          <button class="x" id="cX" aria-label="Close">×</button>
+          <h4 id="cName"></h4>
+          <p class="hi" id="cHi"></p>
+          <p id="cFact"></p>
+          <div class="tags" id="cTags"></div>
+          <div id="gauge"><i></i></div>
+          <div class="acts">
+            <button id="cSay">Say it again</button>
+            <button id="cGo">Zoom here</button>
+          </div>
+        </div>
+      </div>
+
+      <p id="note">Loading the map…</p>
+    </div>
+  </div>
+</section>
+
+<section id="grownup">
+  <div class="wrap">
+    <div class="shead"><h2>For the grown-up</h2></div>
+    <div class="cols">
+      <div>
+        <h3>How to use it with a small child</h3>
+        <ul>
+          <li>One layer at a time. The whole point is that the map is never busy.</li>
+          <li>Start with the place you live. Search for your town, then zoom out slowly
+              until it disappears into the country. That move — the zoom itself — is what
+              teaches scale.</li>
+          <li>Mountains are drawn to size. Everest and the hill at the end of your road are
+              the same kind of object, and the triangles say which is which before any
+              number does.</li>
+          <li>The <b>?</b> button asks for a place out loud and waits for a tap. Wrong answers
+              get a hint, not a buzzer.</li>
+          <li>Pins you add in <b>My places</b> stay in this browser. Nothing is sent anywhere,
+              and nothing here needs an account.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where the data comes from</h3>
+        <ul>
+          <li>Coastlines, countries and US states: Natural Earth, public domain.</li>
+          <li>632 named peaks with elevations, including their Hindi names, and about a
+              thousand named rivers: also Natural Earth.</li>
+          <li>1,558 volcanoes: the Smithsonian Global Volcanism Program's Holocene list, via
+              NOAA. The eruption dates are grouped into bands, and this copy of the list is
+              old enough that recent eruptions are missing. Treat "last erupted" as roughly
+              right, not current.</li>
+          <li>Around 3,300 towns and cities for the search box.</li>
+          <li>The map is a plain equirectangular projection. It stretches Greenland and
+              Antarctica badly, as every flat world map does something badly. Worth saying
+              out loud once a child is old enough to notice.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Free to use, copy, and put on your own website.</p>
+    <p><a href="../index.html">Back to Jugnu</a></p>
+  </div>
+</footer>
+
+<script src="data/base.js"></script>
+<script src="curated.js"></script>
+<script src="atlas.js"></script>
+</body>
+</html>
